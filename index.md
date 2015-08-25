@@ -10,6 +10,8 @@ This tutorial will explain how to get up and running with TurkServer. The intend
 
 2. **Knows the basics of the Javascript app platform [Meteor](https://www.meteor.com/).** If you have never used Meteor before, that's fine -- it's quite easy to learn. Before continuing with this tutorial, [install](https://www.meteor.com/install) Meteor and then complete the [to-do app tutorial](https://www.meteor.com/tutorials/blaze/creating-an-app).
 
+All the code for the project that you will build during the tutorial can be found [here](https://github.com/ldworkin/turkserver-tutorial).
+
 ## The Basics
 
 Before getting started, it will help to define some terminology used by TurkServer. Many of these concepts are from Mechanical Turk, and should therefore be familiar to you, but others will be new.
