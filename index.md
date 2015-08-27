@@ -10,7 +10,7 @@ This tutorial will explain how to get up and running with TurkServer. The intend
 
 2. **Knows the basics of the JavaScript app platform [Meteor](https://www.meteor.com/).** If you have never used Meteor before, that's fine -- it's quite easy to learn. Before continuing with this tutorial, [install](https://www.meteor.com/install) Meteor and then complete the [to-do app tutorial](https://www.meteor.com/tutorials/blaze/creating-an-app).
 
-All the code for the project that you will build during the tutorial can be found [here](https://github.com/ldworkin/turkserver-tutorial).
+All the code for the project that you will build during the tutorial can be found [here](https://github.com/ldworkin/turkserver-tutorial). If you have questions, comments, or suggestions, please add a Github issue to that repo.
 
 ## The Basics
 
@@ -455,9 +455,9 @@ So we've set the bonus value, but we haven't yet approved the worker's assignmen
 
 ## Deployment
 
-First we have to deploy our app. There are two good options: [Modulus](https://modulus.io/) (very beginner-friendly) and [DigitalOcean](https://modulus.io/) (less beginner-friendly, but much more flexible). A fantastic tutorial that covers both options is given [here](http://meteortips.com/deployment-tutorial/). We'll just cover Modulus here.
+First we have to deploy our app. There are two good options: [Modulus](https://modulus.io/) (very beginner-friendly) and [DigitalOcean](https://modulus.io/) (less beginner-friendly, but much more flexible). A fantastic tutorial that covers both options is given [here](http://meteortips.com/deployment-tutorial/). We'll only be covering Modulus in this tutorial. If you choose to deploy on DigialOcean (or any other cloud server) instead, simply skip ahead to the next section. (But first be sure to install an SSL certificate on your server, because otherwise Mechanical Turk will block the external HIT.)
 
-Go to the [Modulus](http://meteortips.com/deployment-tutorial/modulus/) section of the tutorial above, and follow all steps up to and including the `modulus deploy` part, at which point you should receive the URL of your new Meteor application. Before continuing, make the following changes to your settings.json file:
+Go [here](http://meteortips.com/deployment-tutorial/modulus/) to the Modulus section of the tutorial referenced above, and follow all steps up to and including the `modulus deploy` part, at which point you should receive the URL of your new Meteor application. Before continuing, make the following changes to your settings.json file:
 
 1. Make sure you have added your Mechanical Turk key and secret.
 2. Set the sandbox field to have a value of `true`.
