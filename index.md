@@ -427,6 +427,8 @@ Now say we had a ton of users who all completed the experiment, and we just want
 
 Let's grab the id of the most recent experiment. So either click on the right-most bar on the Experiments page, or the top-most blue square on the Assignments - Completed page, and then copy the value of the **Group** field on the pop-up that appears. Now go back to the mongo console and type `db.clicks.find({_groupId: '<value you copied]})`. You should see the same Click document you saw earlier. 
 
+## Setting Payment
+
 So this is well and good, but we still haven't dealt with bonusing the user according to how many times he clicked the button. Let's edit our `incClicks` method so that whenever we increment the counter, we also add some money to the user's bonus:
 
 ```javascript
@@ -450,18 +452,23 @@ So we've set the bonus value, but we haven't yet approved the worker's assignmen
 [[TO-DO AT SOME POINT BEFORE NEXT SECTION]]
 
 - Change the  `/` route -- this is what the worker sees *before* accepting the HIT. Otherwise they will be able to click "Click Me" before the experiment has been set up and this will throw errors.
-- Add scripts for approving and paying bonuses.
 
-## Deployment [UNFINISHED SECTION]
+## Deployment
 
-First we have to deploy our app. For the purposes of this tutorial, we will use Meteor's free hosting. Ultimately, you'll want to put your app somewhere more stable. There is an excellent article on some of the best options [here](http://meteortips.com/first-meteor-tutorial/deployment/). For now, simply type `meteor deploy my_app_name.meteor.com` (but with a name of your choice, of course). [[CHANGE THIS: DOESN'T ACTUALLY WORK.]]
+First we have to deploy our app. There are two good options: [Modulus](https://modulus.io/) (very beginner-friendly) and [DigitalOcean](https://modulus.io/) (less beginner-friendly, but much more flexible). A fantastic tutorial that covers both options is given [here](http://meteortips.com/deployment-tutorial/). We'll just cover Modulus here.
 
-Now we need to make the following changes to our settings.json file:
+Go to the [Modulus](http://meteortips.com/deployment-tutorial/modulus/) section of the tutorial above, and follow all steps up to and including the `modulus deploy` part, at which point you should receive the URL of your new Meteor application. Before continuing, make the following changes to your settings.json file:
 
-1. Makre sure you have added your Mechanical Turk key and secret.
+1. Make sure you have added your Mechanical Turk key and secret.
 2. Set the sandbox field to have a value of `true`.
-3. Set the external url field to the url of your deployed site.
-4. Set the frame height field to be the desired size of your iFrame in the external HIT (for the tutorial, 400 is fine).
+3. Set the external url field to the URL you received above -- but add 'https://' as a prefix!
+4. Set the frame height field to be the desired size of your iFrame in the external HIT (usually 600 - 800 will do).
+
+Now continue the tutorial. When it comes time to add your environment variables, you'll need to add another one with a key of METEOR_SETTINGS and a value equal to the *entire contents of your settings.json* file. Simply cut and paste that entire JSON blob. It should look something like this:
+
+![screenshot](img/meteor-settings.png)
+
+Hit Save, and redeploy your app with `modulus deploy`. Go to your URL and verify that you can login both to the admin console and as a test user.
 
 ## HITs and HITTypes [UNFINISHED SECTION]
 
@@ -486,3 +493,4 @@ Don't select any qualifications right now, because we're just testing on the san
 When you're ready, click "Create". On the following screen, you should see a button that says "Register." Click that to register your new HIT type with Mechanical Turk.
 
 At this point we're all set to create our HIT. Click on "HITs" in the navigation pane. In the "Create New HIT" form, select the HIT type we just created from the dropdown menu. Leave "Max Assignments" and "Lifetime in Seconds" at their default values, which ensure that only one worker can accept this HIT, and that the HIT will be available for one day until it expires. When you're done, click "Create."
+
