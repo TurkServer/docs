@@ -39,12 +39,19 @@ For the purposes of this tutorial, we will use the default Meteor "counter" app 
 
 Before moving on, don't forget to `meteor remove insecure` and `meteor remove autopublish`.
 
-For easiest integration with TurkServer, you will need to add some basic routing to your app. This how you connect different urls ("routes") to different templates. For instance, you could tell your app that `http://localhost:3000/home` shows the homepage, and `http://localhost:3000/faq` shows an FAQ page.
+For easiest integration with TurkServer, you will need to add some basic routing to your app. This how you connect different urls ("routes") to different templates. We will start with two routes:
+
+1. The default path `/`, which will get shown when a worker is previewing your HIT.
+2. A second path `/experiment`, which will get shown after the worker accepts the HIT.
 
 To do this, first add the Meteor package iron-router via `meteor add iron:router`. Then edit the block of HTML at the top of demo.html to look like this:
 
 ```html
 <template name="home">
+    Please accept the HIT to continue.
+</template>
+
+<template name="experiment">
   <head>
     <title>demo</title>
   </head>
@@ -57,7 +64,7 @@ To do this, first add the Meteor package iron-router via `meteor add iron:router
 </template>
 ```
 
-In other words, simply wrap the HTML in a template called "home."
+We have done two things here: we wrapped the existing HTML in a template called "experiment", and we added another template called "home." We want to show the "home" template when a worker is previewing the HIT, and the "experiment" template after they have accepted.
 
 Next create a new file called routes.js and add the following to it:
 
@@ -65,9 +72,13 @@ Next create a new file called routes.js and add the following to it:
 Router.route('/', function() {
   this.render('home');
 });
+
+Router.route('/experiment', function() {
+  this.render('experiment');
+});
 ```
 
-For a more detailed explanation of this code and  a better understanding how routing works, see the [iron-router docs](http://iron-meteor.github.io/iron-router/). Essentially, we have told the app that when we navigate to the route `'/'` (i.e. `https://localhost:3000/`), we should see the "home" template. That was happening anyway, so we haven't actually changed anything about the behavior of our app -- but now we are better prepared to integrate with TurkServer.
+For a more detailed explanation of this code and  a better understanding how routing works, see the [iron-router docs](http://iron-meteor.github.io/iron-router/). Essentially, we have told the app that when we navigate to the default route `'/'`, we should see the "home" template, and when we navigate to the route `'/experiment'`, we should see the "experiment" template.
 
 Now we are ready to add the TurkServer package:
 
@@ -93,7 +104,7 @@ Next create a settings.json file, which needs to contain a password for the Turk
 
 For now, fill in "adminPassword", "accessKeyId", and "secretAccessKey". We'll come back to the other parts later.
 
-Finally, run your app with `meteor --settings settings.json`. When you navigate to `http://localhost:3000/`, you should still see the "Click me" page, but now you should also see a popup that prompts you to select a "batch:"
+Finally, run your app with `meteor --settings settings.json`. When you navigate to `http://localhost:3000/` (the default route `'/'`), you should see your "home" template (which prompts you to accept the HIT), and now you should also see a popup that prompts you to select a "batch:"
 
 ![screenshot](img/popup.png)
 
@@ -121,7 +132,7 @@ The **SimpleAssigner** is similar, except that when a user goes into the lobby f
 
 To make this flow work properly, we need to glue each of the two possible states (experiment and exit survey) to a different template in our application. (Note: We don't need to worry about making a template for the lobby, because the SimpleAssigner never lets the user stay there for long -- he is always immediately redirected to the experiment or exit survey. If you write an assigner that makes users wait in the lobby, you will need to design a template for it.)
 
-Let's assume that when a user is in the experiment, we want him to see the "Click Me" page. And when the user is in the exit survey, we want him to see a submit button that will allow him to submit the HIT. We already have the "Click Me" page, so let's design the exit survey.
+Let's assume that when a user is in the experiment, we want him to see the "Click Me" page. And when the user is in the exit survey, we want him to see a submit button that will allow him to submit the HIT. We already have the "Click Me" page (in the "experiment" template), so let's design the exit survey.
 
 First, we'll create the template. Add a block at the end of demo.html that looks like this:
 
@@ -167,24 +178,20 @@ Template.survey.events({
 });
 ```
 
-Now we need to connect this template to a route. Change routes.js to:
+Add the following block to routes.js:
 
 ```javascript
-Router.route('/', function() {
-  this.render('home');
-});
-
 Router.route('/survey', function() {
   this.render('survey');
 });
 ```
 
-Finally, we need to tell our app that when a user is in the experiment state, we should load the `'/'` route (which is connected to the "home" template), and when a user is in the exit survey state, we should load the `'/survey'` route (which is connected to the "survey" template). Add the following inside the `Meteor.isClient` block at the top of demo.js:
+Finally, we need to tell our app that when a user is in the experiment state, we should load the `'/experiment'` route (which is connected to the "experiment" template), and when a user is in the exit survey state, we should load the `'/survey'` route (which is connected to the "survey" template). Add the following inside the `Meteor.isClient` block at the top of demo.js:
 
 ```javascript
 Tracker.autorun(function() {
   if (TurkServer.inExperiment()) {
-    Router.go('/');
+    Router.go('/experiment');
   } else if (TurkServer.inExitSurvey()) {
     Router.go('/survey');
   }
@@ -449,10 +456,6 @@ To see if this worked properly, go through the HIT yet again. Be sure to click t
 
 So we've set the bonus value, but we haven't yet approved the worker's assignment or paid the bonus. We can't test out this functionality while running as a fake user, so we'll have to move to Mechanical Turk's sandbox environment.
 
-[[TO-DO AT SOME POINT BEFORE NEXT SECTION]]
-
-- Change the  `/` route -- this is what the worker sees *before* accepting the HIT. Otherwise they will be able to click "Click Me" before the experiment has been set up and this will throw errors.
-
 ## Deployment
 
 First we have to deploy our app. There are two good options: [Modulus](https://modulus.io/) (very beginner-friendly) and [DigitalOcean](https://modulus.io/) (less beginner-friendly, but much more flexible). A fantastic tutorial that covers both options is given [here](http://meteortips.com/deployment-tutorial/). We'll only be covering Modulus in this tutorial. If you choose to deploy on DigialOcean (or any other cloud server) instead, simply skip ahead to the next section. (But first be sure to install an SSL certificate on your server, because otherwise Mechanical Turk will block the external HIT.)
@@ -493,4 +496,3 @@ Don't select any qualifications right now, because we're just testing on the san
 When you're ready, click "Create". On the following screen, you should see a button that says "Register." Click that to register your new HIT type with Mechanical Turk.
 
 At this point we're all set to create our HIT. Click on "HITs" in the navigation pane. In the "Create New HIT" form, select the HIT type we just created from the dropdown menu. Leave "Max Assignments" and "Lifetime in Seconds" at their default values, which ensure that only one worker can accept this HIT, and that the HIT will be available for one day until it expires. When you're done, click "Create."
-
