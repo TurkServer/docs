@@ -2,13 +2,13 @@
 layout: default
 ---
 
-[TurkServer](https://github.com/HarvardEconCS/turkserver-meteor) is a framework based on the Javascript platform [Meteor](https://www.meteor.com/) that makes it easy to build interactive web-based user experiments for deployment on [Amazon Mechanical Turk](https://www.mturk.com/mturk/welcome). 
+[TurkServer](https://github.com/HarvardEconCS/turkserver-meteor) is a framework based on the JavaScript platform [Meteor](https://www.meteor.com/) that makes it easy to build interactive web-based user experiments for deployment on [Amazon Mechanical Turk](https://www.mturk.com/mturk/welcome). 
 
 This tutorial will explain how to get up and running with TurkServer. The intended audience is someone who:
 
 1. **Is familiar with [Amazon Mechanical Turk](https://www.mturk.com/mturk/welcome)** and understands how to request and approve work. If you have never used Mechanical Turk before, we recommend you explore a bit first. Go [here](https://requester.mturk.com/) and create one of the example projects.
 
-2. **Knows the basics of the Javascript app platform [Meteor](https://www.meteor.com/).** If you have never used Meteor before, that's fine -- it's quite easy to learn. Before continuing with this tutorial, [install](https://www.meteor.com/install) Meteor and then complete the [to-do app tutorial](https://www.meteor.com/tutorials/blaze/creating-an-app).
+2. **Knows the basics of the JavaScript app platform [Meteor](https://www.meteor.com/).** If you have never used Meteor before, that's fine -- it's quite easy to learn. Before continuing with this tutorial, [install](https://www.meteor.com/install) Meteor and then complete the [to-do app tutorial](https://www.meteor.com/tutorials/blaze/creating-an-app).
 
 All the code for the project that you will build during the tutorial can be found [here](https://github.com/ldworkin/turkserver-tutorial).
 
@@ -233,7 +233,7 @@ Meteor.methods({
 });
 ```
 
-In our new method `goToExitSurvey()`, we first grab the Javascript object corresponding to the user's current experiment. (TurkServer uses the terms "instance" and "experiment" interchangeably; I will try to stick to "experiment.) Then we call the `teardown()` method of this object, which ends the experiment. So this point the user goes back to the lobby, and then the SimpleAssigner sends him to the exit survey, so he can submit the HIT.
+In our new method `goToExitSurvey()`, we first grab the JavaScript object corresponding to the user's current experiment. (TurkServer uses the terms "instance" and "experiment" interchangeably; I will try to stick to "experiment.) Then we call the `teardown()` method of this object, which ends the experiment. So this point the user goes back to the lobby, and then the SimpleAssigner sends him to the exit survey, so he can submit the HIT.
 
 We've talked a lot about the SimpleAssigner, but we haven't actually yet told our app that we want to use it. To do so, we need to create a **batch** for our HIT, and then add the SimpleAssigner to this batch. Recall that a batch is a way of defining TurkServer-specific properties of our HIT, and the assigner type is one of these properties. 
 
@@ -248,7 +248,7 @@ var batch = TurkServer.Batch.getBatchByName("main");
 batch.setAssigner(new TurkServer.Assigners.SimpleAssigner);
 ```
 
-A few more TurkServer API calls here. First we grab the Javascript object corresponding to the batch that we created. Then we call its method `setAssigner()` to tell our app that all HITs in this batch should use the SimpleAssigner.
+A few more TurkServer API calls here. First we grab the JavaScript object corresponding to the batch that we created. Then we call its method `setAssigner()` to tell our app that all HITs in this batch should use the SimpleAssigner.
 
 ## Running as a Fake User
 
@@ -442,9 +442,9 @@ incClicks: function() {
 },
 ```
 
-First this code grabs the Javascript object corresponding to the user's current assignment. Recall that we have an assignment object for every <user, HIT> pair, so this is the natural place to store a bonus. Then we call the method `addPayment()` to increment the bonus by a fixed amount (in this case, 10 cents).
+First this code grabs the JavaScript object corresponding to the user's current assignment. Recall that we have an assignment object for every <user, HIT> pair, so this is the natural place to store a bonus. Then we call the method `addPayment()` to increment the bonus by a fixed amount (in this case, 10 cents).
 
-You should start seeing a pattern emerging with these TurkServer API calls. First we grab a particular Javascript object -- e.g. a batch, an experiment, or an assignment. Then we call one of its methods. If you're curious about what methods are available on these objects, see the relevant files in turkserver-meteor/lib, namely batches.coffee, instance.jsx, and assignment.jsx.
+You should start seeing a pattern emerging with these TurkServer API calls. First we grab a particular JavaScript object -- e.g. a batch, an experiment, or an assignment. Then we call one of its methods. If you're curious about what methods are available on these objects, see the relevant files in turkserver-meteor/lib, namely batches.coffee, instance.jsx, and assignment.jsx.
 
 To see if this worked properly, go through the HIT yet again. Be sure to click the button a few times. Then go to the admin console and the Assignments - Completed page. On the most recent assignment, you should see a value next to the Bonus field, as well as a red label that says "Unpaid."
 
