@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[TurkServer](https://github.com/HarvardEconCS/turkserver-meteor) is a framework based on the JavaScript platform [Meteor](https://www.meteor.com/) that makes it easy to build interactive web-based user experiments for deployment on [Amazon Mechanical Turk](https://www.mturk.com/mturk/welcome). 
+[TurkServer](https://github.com/HarvardEconCS/turkserver-meteor) is a framework based on the JavaScript app platform [Meteor](https://www.meteor.com/) that makes it easy to build interactive web-based user experiments for deployment on [Amazon Mechanical Turk](https://www.mturk.com/mturk/welcome).
 
 This tutorial will explain how to get up and running with TurkServer. The intended audience is someone who:
 
@@ -62,10 +62,8 @@ In other words, simply wrap the HTML in a template called "home."
 Next create a new file called routes.js and add the following to it:
 
 ```javascript
-Router.map(function() {
-  this.route('home', {
-    path: '/'
-  });
+Router.route('/', function() {
+  this.render('home');
 });
 ```
 
@@ -111,13 +109,13 @@ As discussed earlier, TurkServer assumes that every HIT consists of a **lobby**,
 
 First, note that matter what assigner you use, the following two rules are guaranteed:
 
-1. When a user accepts the HIT, he goes into the lobby.
-2. When a user finishes an experiment, he goes back to the lobby. 
+- When a user accepts the HIT, he goes into the lobby.
+- When a user finishes an experiment, he goes back to the lobby.
 
 The **TestAssigner** enforces the following additional rules:
 
-1. When a user goes into the lobby for the first time (i.e. after he accepts the HIT), he immediately gets put into a *joint* experiment with all other users who have also accepted the HIT.
-2. When a user goes to the lobby for the second time (i.e. when he is done with the experiment), he immediately gets put into the exit survey.
+- When a user goes into the lobby for the first time (i.e. after he accepts the HIT), he immediately gets put into a *joint* experiment with all other users who have also accepted the HIT.
+- When a user goes to the lobby for the second time (i.e. when he is done with the experiment), he immediately gets put into the exit survey.
 
 The **SimpleAssigner** is similar, except that when a user goes into the lobby for the first time (i.e. after he accepts the HIT), he immediately gets put into his *own* experiment. So this assigner is appropriate for single-user HITs. We will be using the SimpleAssigner is the remainder of the tutorial.
 
@@ -172,17 +170,16 @@ Template.survey.events({
 Now we need to connect this template to a route. Change routes.js to:
 
 ```javascript
-Router.map(function() {
-  this.route('home', {
-    path: '/'
-  });
-  this.route('survey', {
-    path: '/survey'
-  });
+Router.route('/', function() {
+  this.render('home');
+});
+
+Router.route('/survey', function() {
+  this.render('survey');
 });
 ```
 
-Finally, we need to tell our app that when a user is in the experiment state, we should load the `'/'` route (which is connected to the "home" template), and when a user is in the exit survey state, we should load the `'/survey'` route (which is connected to the "survey" template). To do so, add the following inside the `if (Meteor.isClient)` block at the top of demo.js:
+Finally, we need to tell our app that when a user is in the experiment state, we should load the `'/'` route (which is connected to the "home" template), and when a user is in the exit survey state, we should load the `'/survey'` route (which is connected to the "survey" template). Add the following inside the `Meteor.isClient` block at the top of demo.js:
 
 ```javascript
 Tracker.autorun(function() {
@@ -222,7 +219,7 @@ Template.hello.events({
 });
 ```
 
-And define the new method `goToExitSurvey()` within the `if (Meteor.isServer)` block (but outside of the `Meteor.startup()` block) at the bottom of demo.js:
+And define the new method `goToExitSurvey()` within the `Meteor.isServer` block (but outside of the `Meteor.startup()` block) at the bottom of demo.js:
 
 ```javascript
 Meteor.methods({
@@ -241,7 +238,7 @@ We can create a batch via the admin interface. Go back to `http://localhost:3000
 
 ![screenshot](img/batch.png)
 
-To add the SimpleAssigner to your new "main" batch, add the following code within the `Meteor.startup` block of the `if (Meteor.isServer)` block at the bottom of demo.js:
+To add the SimpleAssigner to your new "main" batch, add the following code within the `Meteor.startup` block of the `Meteor.isServer` block at the bottom of demo.js:
 
 ```javascript
 var batch = TurkServer.Batch.getBatchByName("main");
@@ -261,7 +258,7 @@ The popup also provides some other information: TurkServer has generated a fake 
 
 Click "Login" to set this whole process in motion. 
 
-After "accepting" the HIT, you go straight into the lobby. The code sees that you are in batch "main", and that the assigner on this batch is a SimpleAssigner. The SimpleAssigner ensures that when you enter the lobby for the first time, you go straight into the experiment stage. So `TurkServer.inExperiment()` becomes true and the `Tracker.autorun` block in demo.js calls `Router.go('/')`. The routing code in routes.js then knows to load up the "hello" template, so you see the "Click Me" page.
+After "accepting" the HIT, you go straight into the lobby. The code sees that you are in batch "main", and that the assigner on this batch is a SimpleAssigner. The SimpleAssigner ensures that when you enter the lobby for the first time, you go straight into the experiment stage. So `TurkServer.inExperiment()` becomes true and the `Tracker.autorun` block in demo.js calls `Router.go('/')`. The routing code in routes.js then loads the "hello" template, so you see the "Click Me" page.
 
 When you are ready to move to the exit survey, click "Exit Survey." Now the client calls the `goToExitSurvey()` method, which ends the experiment, so you go back to the lobby. The SimpleAssigner ensures taht when you enter the lobby for the second time, you go straight to the exit survey stage. So `TurkServer.inExitSurvey()` becomes true, which results in our router loading up the `'/survey'` route, and the "survey" template is displayed.
 
@@ -278,16 +275,14 @@ Now click on "Assignments - Completed" in the left navigation pane. You should s
 This shows the results of the HIT you just completed as a fake user. More precisely, it shows the details of your **assignment**. Recall the following facts about users, assignments, and experiments:
 
 - A user can accept many different HITs over his lifetime and therefore have many different assignments, but he can only be in one assignment at a time. 
-
 - An assignment contains all the experiments that a user did during the HIT. (In our case, each user only does one experiment per HIT, so each assignment will only have one experiment associated with it.)
-
 - An experiment can contain multiple different users. (In our case, each experiment only has one user.)
 
 Take a look at some of the data recorded for this assignment:
 
 - You can see your fake Mechanical Turk WorkerId at the top -- hover over it to see some more data about your fake user (for instance, he is in a "disconnected" state because he already submitted the HIT). 
 - You can also see the times you accepted and submitted the HIT. 
-- The **Instances** field shows one square blue icon, which corresponds to the one experiment you did in this assignment. If you click on that icon, you will see a popup with the id of that experiment, as well as a list of the users who participated -- which is just you, of course, because this was a single-user HIT:
+- The **Instances** field shows one square blue icon, which corresponds to the one experiment you did in this assignment. If you click on that icon, you will see a popup with the id of that experiment, as well as a list of the users who participated:
 
 ![screenshot](img/instance-popup.png)
 
@@ -343,7 +338,7 @@ TurkServer.partitionCollection(Clicks);
 
 You should be familiar with the first line of code. The second is a bit more mysterious, but bear with me for now.
 
-Now go to demo.js, and within the `if (Meteor.isClient)` block, add the following:
+Now go to demo.js, and within the `Meteor.isClient` block, add the following:
 
 ```javascript
 Tracker.autorun(function() {
@@ -353,7 +348,7 @@ Tracker.autorun(function() {
 });
 ```
 
-Next, within `if (Meteor.isServer)` block, add:
+Next, within `Meteor.isServer` block, add:
 
 ```javascript
 Meteor.publish('clicks', function() {
