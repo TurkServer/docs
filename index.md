@@ -91,6 +91,11 @@ Next create a settings.json file, which needs to contain a password for the Turk
 {
   "turkserver": {
     "adminPassword": "",
+    "experiment": {
+      "limit": {
+        "batch": <int>
+	  }
+    },
     "mturk": {
       "sandbox": <true|false>,
       "accessKeyId": "",
@@ -171,12 +176,15 @@ And modify the events code accordingly:
 ```javascript
 Template.survey.events({
   'submit .survey': function (e) {
+    e.preventDefault();
     var results = {confusing: e.target.confusing.value,
                    feedback: e.target.feedback.value}
     TurkServer.submitExitSurvey(results);
   }
 });
 ```
+
+Note that we changed the event from a button click to a form submission, so we need to use `e.preventDefault()` to prevent the browser from automatically handling the event.
 
 Add the following block to routes.js:
 
@@ -265,7 +273,7 @@ The popup also provides some other information: TurkServer has generated a fake 
 
 Click "Login" to set this whole process in motion. 
 
-After "accepting" the HIT, you go straight into the lobby. The code sees that you are in batch "main", and that the assigner on this batch is a SimpleAssigner. The SimpleAssigner ensures that when you enter the lobby for the first time, you go straight into the experiment stage. So `TurkServer.inExperiment()` becomes true and the `Tracker.autorun` block in demo.js calls `Router.go('/')`. The routing code in routes.js then loads the "hello" template, so you see the "Click Me" page.
+After "accepting" the HIT, you go straight into the lobby. The code sees that you are in batch "main", and that the assigner on this batch is a SimpleAssigner. The SimpleAssigner ensures that when you enter the lobby for the first time, you go straight into the experiment stage. So `TurkServer.inExperiment()` becomes true and the `Tracker.autorun` block in demo.js calls `Router.go('/experiment')`. The routing code in routes.js then loads the "experiment" template, so you see the "Click Me" page.
 
 When you are ready to move to the exit survey, click "Exit Survey." Now the client calls the `goToExitSurvey()` method, which ends the experiment, so you go back to the lobby. The SimpleAssigner ensures taht when you enter the lobby for the second time, you go straight to the exit survey stage. So `TurkServer.inExitSurvey()` becomes true, which results in our router loading up the `'/survey'` route, and the "survey" template is displayed.
 
@@ -377,7 +385,7 @@ Now we are finally ready to use our new partitioned collection. Instead of stori
 
 ```javascript
 TurkServer.initialize(function() {
-  var clickObj = {count: 0}
+  var clickObj = {count: 0};
   Clicks.insert(clickObj);
 });
 ```
@@ -466,14 +474,15 @@ Go [here](http://meteortips.com/deployment-tutorial/modulus/) to the Modulus sec
 2. Set the sandbox field to have a value of `true`.
 3. Set the external url field to the URL you received above -- but add 'https://' as a prefix!
 4. Set the frame height field to be the desired size of your iFrame in the external HIT (usually 600 - 800 will do).
+5. Set the experiment.limit.batch value to 100. This value determines how many times a worker can accept a HIT from the same batch. For testing purposes, we want to be able to accept multiple HITs from the same batch; in production, you might want to prevent such behavior.
 
-Now continue the tutorial. When it comes time to add your environment variables, you'll need to add another one with a key of METEOR_SETTINGS and a value equal to the *entire contents of your settings.json* file. Simply cut and paste that entire JSON blob. It should look something like this:
+Now continue the Modulus tutorial. When it comes time to add your environment variables, you'll need to add another one with a key of METEOR_SETTINGS and a value equal to the *entire contents of your settings.json* file. Simply cut and paste that entire JSON blob. It should look something like this:
 
 ![screenshot](img/meteor-settings.png)
 
 Hit Save, and redeploy your app with `modulus deploy`. Go to your URL and verify that you can login both to the admin console and as a test user.
 
-## HITs and HITTypes [UNFINISHED SECTION]
+## HITs and HITTypes
 
 The next step is to create a new HIT type. We can do this in the admin console. Click on "MTurk" in the admin console navigation pane and go through the process of filling out the form on the right side. First we have to choose a batch for the HIT type. All HITs with this HIT type will belong to the batch we choose. This important because the only way TurkServer knows which **assigner** to use on a particular HIT is by checking which **batch** the HIT belongs to. If TurkServer doesn't know what assigner to use, then the app won't know where to send a user after he enters the lobby, and the entire flow will break.
 
@@ -495,4 +504,42 @@ Don't select any qualifications right now, because we're just testing on the san
 
 When you're ready, click "Create". On the following screen, you should see a button that says "Register." Click that to register your new HIT type with Mechanical Turk.
 
-At this point we're all set to create our HIT. Click on "HITs" in the navigation pane. In the "Create New HIT" form, select the HIT type we just created from the dropdown menu. Leave "Max Assignments" and "Lifetime in Seconds" at their default values, which ensure that only one worker can accept this HIT, and that the HIT will be available for one day until it expires. When you're done, click "Create."
+At this point we're all set to create our HIT. Click on "HITs" in the navigation pane. In the "Create New HIT" form, select the HIT type we just created from the dropdown menu. Leave "Max Assignments" and "Lifetime in Seconds" at their default values, which ensure that only one worker can accept this HIT, and that the HIT will be available for one day until it expires. When you're done, click "Create." You should see the HIT pop up in the table to the left:
+
+![screenshot](img/new_hit.png)
+
+## Sandbox Testing
+
+Now go to the [requester sandbox](https://requestersandbox.mturk.com/) to check that your HIT was posted successfully. Click on "Manage" in the blue toolbar, and then click on "Manage HITs individually" in the top right. You should see your HIT:
+
+![screenshot](img/sandbox_hit.png)
+
+Finally, let's test this out as a sandbox worker. Go to the [worker sandbox](https://workersandbox.mturk.com/mturk/) *in a different browser*. Click the HITs tab and then search for your HIT (using either your requester name or the name of the HIT). When you see it, click the "View a HIT in this group" link in the upper right of the box. If all went well, your app will be loaded into an iFrame at the default route `'/'`, which shows the "home" template and prompts you to accept the HIT:
+
+![screenshot](img/accept_hit.png)
+
+Click the "Accept HIT" button. You should now be put into an experiment, so the code directs you to the `'/experiment'` route and you see the "experiment" template. Increment the counter a few times, then to go the exit survey and submit.
+
+To check that it worked properly, first go back to the requester sandbox. You should see that "Assignments Pending Review" field of your HIT is now equal to 1, and that "Remaining Assignments" is equal to 0.
+
+Now go back to the admin console and go to Assignments - Completed. You should see the familiar entry, but now the worker ID corresponds to a "real" sandbox worker, whose work we can approve, and whom we can also pay.
+
+The first thing we should do is check on the Mechanical Turk status of this assignment -- is it "submitted" and/or "approved"? Click the "Refresh Assignment States" button in the "Maintenance" well at the top of the page:
+
+![screenshot](img/maintenance.png)
+
+The **Status** field of the assignment should now change from "Unknown" to "Submitted":
+
+![screenshot](img/submitted.png)
+
+This means that Mechanical Turk knows that this assignment has been completed, but it has not yet been approved. We set the "Auto Approval Delay in Seconds" property of our HIT Type to a whole week, so we need to manually approve this assignment if we want it approved before then. Click the "Approve All Assignments" button in the "Maintenance" well to do this. You'll see a popup that asks you to confirm -- feel free to leave the message blank, and hit "Ok." The **Status** field of the assignment should now change from "Submitted" to "Approved."
+
+Now that the assignment is approved, we can pay the worker's bonus. Click the "Pay All Bonuses" button in the "Maintenance" well. You'll again see a popup that asks you to confirm -- you do need to enter a message here, which will included in the email that Mechanical Turk sends to the worker to notify him of the bonus. When you click okay, you'll see that the **Bonus** field of the assignment now has a "Paid" label next to it:
+
+![screenshot](img/paid.png)
+
+Assuming your worker sandbox account is tied to a real e-mail address, you should soon receive the corresponding notification e-mail. Congratulations -- you have successfully posted a HIT, completed it, and paid yourself for doing so.
+
+## Other Features [[UNFINISHED]]
+
+That concludes the main section of this tutorial; in this section I will briefly point out some other features of TurkServer that are worth knowing about.
