@@ -1,6 +1,6 @@
 # Site settings
 title: TurkServer Tutorial
-baseurl: /turkserver-tutorial
+baseurl: 
 
 # Build settings
 markdown: redcarpet

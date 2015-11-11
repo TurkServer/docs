@@ -23,7 +23,7 @@ use custom APIs. This means that most of the outstanding Meteor
 documentation on the Internet will be useful, and that most of the
 required knowledge is not specific to TurkServer.
 
-All the code for the project that you will build during the tutorial can be found [here](https://github.com/ldworkin/turkserver-tutorial). If you have questions, comments, or suggestions, please add a Github issue to that repo.
+All the code for the project that you will build during the tutorial can be found [here](https://github.com/VirtualLab/tutorial). If you have questions, comments, or suggestions, please add a Github issue to that repo.
 
 ## The Basics
 
