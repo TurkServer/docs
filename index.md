@@ -276,7 +276,7 @@ Note that we added an id attribute to both buttons so that we can distinguish be
 
 ```javascript
 Template.hello.events({
-  'click button#clickMe': function ()
+  'click button#clickMe': function () {
     // increment the counter when button is clicked
     Session.set('counter', Session.get('counter') + 1);
   },
