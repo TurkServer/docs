@@ -569,33 +569,6 @@ To see if this worked properly, go through the HIT yet again. Be sure to click t
 
 So we've set the bonus value, but we haven't yet approved the worker's assignment or paid the bonus. We can't test out this functionality while running as a fake user, so we'll have to move to Mechanical Turk's sandbox environment.
 
-## Deployment
-
-First we have to deploy our app. There are two good options:
-[Modulus](https://modulus.io/) (very beginner-friendly) and
-[DigitalOcean](https://modulus.io/) (less beginner-friendly, but much
-more flexible). A fantastic tutorial that covers both options is given
-[here](http://meteortips.com/deployment-tutorial/). We'll only be
-covering Modulus in this tutorial. If you choose to deploy on
-DigitalOcean (or any other cloud server) instead, simply skip ahead to
-the next section. (But first be sure to install an SSL certificate on
-your server, because otherwise Mechanical Turk will block the external
-HIT.)
-
-Go [here](http://meteortips.com/deployment-tutorial/modulus/) to the Modulus section of the tutorial referenced above, and follow all steps up to and including the `modulus deploy` part, at which point you should receive the URL of your new Meteor application. Before continuing, make the following changes to your settings.json file:
-
-1. Make sure you have added your Mechanical Turk key and secret.
-2. Set the sandbox field to have a value of `true`.
-3. Set the external url field to the URL you received above -- but add 'https://' as a prefix!
-4. Set the frame height field to be the desired size of your iFrame in the external HIT (usually 600 - 800 will do).
-5. Set the experiment.limit.batch value to 100. This value determines how many times a worker can accept a HIT from the same batch. For testing purposes, we want to be able to accept multiple HITs from the same batch; in production, you might want to prevent such behavior.
-
-Now continue the Modulus tutorial. When it comes time to add your environment variables, you'll need to add another one with a key of METEOR_SETTINGS and a value equal to the *entire contents of your settings.json* file. Simply cut and paste that entire JSON blob. It should look something like this:
-
-![screenshot](img/meteor-settings.png)
-
-Hit Save, and redeploy your app with `modulus deploy`. Go to your URL and verify that you can login both to the admin console and as a test user.
-
 ## HITs and HITTypes
 
 The next step is to create a new HIT type. We can do this in the admin
@@ -631,44 +604,6 @@ At this point we're all set to create our HIT. Click on "HITs" in the navigation
 
 ![screenshot](img/new_hit.png)
 
-## Sandbox Testing
-
-Now go to the [requester sandbox](https://requestersandbox.mturk.com/) to check that your HIT was posted successfully. Click on "Manage" in the blue toolbar, and then click on "Manage HITs individually" in the top right. You should see your HIT:
-
-![screenshot](img/sandbox_hit.png)
-
-Finally, let's test this out as a sandbox worker. Go to the
-[worker sandbox](https://workersandbox.mturk.com/mturk/) *in a
-different browser or Chrome incognito tab*. Click the HITs tab and
-then search for your HIT (using either your requester name or the name
-of the HIT). When you see it, click the "View a HIT in this group"
-link in the upper right of the box. If all went well, your app will be
-loaded into an iFrame at the default route `'/'`, which shows the
-"home" template and prompts you to accept the HIT:
-
-![screenshot](img/accept_hit.png)
-
-Click the "Accept HIT" button. You should now be put into an experiment, so the code directs you to the `'/experiment'` route and you see the "experiment" template. Increment the counter a few times, then to go the exit survey and submit.
-
-To check that it worked properly, first go back to the requester sandbox. You should see that "Assignments Pending Review" field of your HIT is now equal to 1, and that "Remaining Assignments" is equal to 0.
-
-Now go back to the admin console and go to Assignments - Completed. You should see the familiar entry, but now the worker ID corresponds to a "real" sandbox worker, whose work we can approve, and whom we can also pay.
-
-The first thing we should do is check on the Mechanical Turk status of this assignment -- is it "submitted" and/or "approved"? Click the "Refresh Assignment States" button in the "Maintenance" well at the top of the page:
-
-![screenshot](img/maintenance.png)
-
-The **Status** field of the assignment should now change from "Unknown" to "Submitted":
-
-![screenshot](img/submitted.png)
-
-This means that Mechanical Turk knows that this assignment has been completed, but it has not yet been approved. We set the "Auto Approval Delay in Seconds" property of our HIT Type to a whole week, so we need to manually approve this assignment if we want it approved before then. Click the "Approve All Assignments" button in the "Maintenance" well to do this. You'll see a popup that asks you to confirm -- feel free to leave the message blank, and hit "Ok." The **Status** field of the assignment should now change from "Submitted" to "Approved."
-
-Now that the assignment is approved, we can pay the worker's bonus. Click the "Pay All Bonuses" button in the "Maintenance" well. You'll again see a popup that asks you to confirm -- you do need to enter a message here, which will included in the email that Mechanical Turk sends to the worker to notify him of the bonus. When you click okay, you'll see that the **Bonus** field of the assignment now has a "Paid" label next to it:
-
-![screenshot](img/paid.png)
-
-Assuming your worker sandbox account is tied to a real e-mail address, you should soon receive the corresponding notification e-mail. Congratulations -- you have successfully posted a HIT, completed it, and paid yourself for doing so.
 
 ## Other Features - **UNFINISHED**
 
