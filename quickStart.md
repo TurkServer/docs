@@ -13,7 +13,7 @@ For more information, regarding how to build this app, see [here](/tutorial.html
 
 
 
-## Install
+## ***Install***
 1. Git: See [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 
 
 2. Meteor:
@@ -43,22 +43,24 @@ On OS X or Linux?
 
 
 
-## Getting Started
+## ***Getting Started***
 
 1.  Checkout the project 
     > `git clone https://github.com/VirtualLab/tutorial.git`
 
 2.  Add TurkServer package
     
-    Under the roof of your project:
-    > `git clone https://github.com/HarvardEconCS/turkserver-meteor.git packages/turkserver` (Please note: Using GitHub has the install source is temporary until it becomes a Meteor package)
+    Under the root of your project, add the turkserver meteor package:
+    > `cd tutorial`
+    
+    > `git clone https://github.com/HarvardEconCS/turkserver-meteor.git packages/turkserver` (Please note: Using GitHub has the install source is temporary until it's published as a Meteor package)
     
     > `meteor add mizzao:turkserver`
-3.  Setup settings file
+3.  Create settings file
     
-    Under the roof of your project, create a `settings.json` file, follow `settings-template.json`, fill in "adminPassword", "accessKeyId", and "secretAccessKey".
-    
-    To retrieve your Amazon Mechanical Turk account key and secret pair, see [here](http://docs.aws.amazon.com/AWSMechTurk/latest/AWSMechanicalTurkGettingStartedGuide/SetUp.html)
+    Under the root of your project, create a `settings.json` file, follow `settings-template.json`, fill in "adminPassword", "accessKeyId", and "secretAccessKey".
+    (To retrieve your Amazon Mechanical Turk account key and secret pair, see [here](http://docs.aws.amazon.com/AWSMechTurk/latest/AWSMechanicalTurkGettingStartedGuide/SetUp.html)
+    )
     
     The file should look like this:
     
@@ -84,123 +86,143 @@ On OS X or Linux?
        
 4.  Run your app
     > `meteor --settings settings.json`
+
+    In your console you should see:
     
-    And you should see
-    > `App running at: http://localhost:3000/`
+    ![screenshot](img/tutorial-console.png)
+    
+    Open your browser:   
+    ![screenshot](img/tutorial-start.png)
+    Navigate to via http://localhost:3000/turkserver, login with your password, enter the admin dashboard:
+    ![screenshot](img/turkserver.png)
 
-
-
-## Deployment
+## ***Deployment***
 
 To deploy your meteor app in cloud, there are many choices.
 
 Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as example to show you how easily you can deploy your app in a cloud.(*Free one-month trial: sign up for free and get $200 to spend on all Azure services) 
 
-### Understand Azure
+### **Understand Azure**
 [Azure](https://azure.microsoft.com/en-us/overview/what-is-azure/) offers several ways to host web apps:
 
-[App Service](https://azure.microsoft.com/en-us/services/app-service/) (Very beginner-friendly, less manual) 
+- [App Service](https://azure.microsoft.com/en-us/services/app-service/) (Very beginner-friendly, less manual) 
 
-[Cloud Services](https://azure.microsoft.com/en-us/services/cloud-services/) (Beginner-friendly, and flexible) 
+- [Cloud Services](https://azure.microsoft.com/en-us/services/cloud-services/) (Beginner-friendly, and flexible) 
 
-[Virtual Machines](https://azure.microsoft.com/en-us/services/virtual-machines/) (Less beginner-friendly, but much more flexible). 
+- [Virtual Machines](https://azure.microsoft.com/en-us/services/virtual-machines/) (Less beginner-friendly, but much more flexible). 
 
-[Service Fabri](https://azure.microsoft.com/en-us/services/service-fabric/) (Less beginner-friendly, microservice-based application development)
-
-![screenshot](img/azure-cloud-3-services.png)
-
-For more detailed comparison, see [here](https://azure.microsoft.com/en-us/documentation/articles/choose-web-site-cloud-service-vm/).
-
-### Deploy to Azure App Service 
-
-Build your App Srvice by Azure Portal, try it [here](https://tryappservice.azure.com/).
-
-And configure your App Service server with following App Settings: 
-
-- MONGO_URL - (Mongo DB connection string from a MongoDB hosted on Mongo Lab or a VM)
-- ROOT_URL - http://{sitename}.azurewebsites.net or your custom domain if you've set that up
-- WEBSITE_NODE_DEFAULT_VERSION - 0.10.40
-- METEOR_SETTINGS - JSON value equals to the entire contents of your `settings.json` file
-    ![screenshot](img/meteor-settings.png)
-
-For Windows users, you can use [Azure-demeteorizer](https://github.com/christopheranderson/azure-demeteorizer).
-Make sure you install and setup all the [prerequisites](https://github.com/christopheranderson/azure-demeteorizer#prerequisites),
-
-
-then, under the root of your app folder:
-
-> 1. Install Azure-demeteorizer globally using npm `npm install -g christopheranderson/azure-demeteorizer`
-> 2. `azure-demeteorizer build`
-> 3. `azure-demeteorizer install`
-> 4. `azure-demeteorizer zip`
-> 5. `azure-demeteorizer deploy -s [sitename] -u [username] - p [password]`
-      - sitename: the name of your App.
-      - username: username for your site's [deployment credentials].
-      - password: password for your site's [deployment credentials].
+- [Service Fabri](https://azure.microsoft.com/en-us/services/service-fabric/) (Less beginner-friendly, microservice-based application development)
     
-For Linux/Mac OSX users, you can use [Demeteorizer](https://github.com/OnModulus/demeteorizer), however,
-you need first demeteorize your meteor app to run as a "standard" nodejs app:
+    ![screenshot](img/azure-cloud-3-services.png)
 
-> 1. Install Demeteorizer globally using npm`$ npm install -g demeteorizer`
-> 2. `$ cd tutorial`
-> 3. `$ demeteorizer`
-> 4. `$ cd .demeteorized/bundle/programs/server`
-> 5. `$ npm install`
-> 6. `$ MONGO_URL=mongodb://localhost:27017/test PORT=3000 ROOT_URL=http://localhost:3000 npm start`
-> If this is successful, then you can continue using `git remote` to push your app to Azure. (If you didn't choose continuous deployment using GIT when you build your Azure App Service, you can manually set it up [here](https://azure.microsoft.com/en-us/documentation/articles/web-sites-publish-source-control/)).
-> 7. `git init`
-> 8. `git remote add azure  https://username@{sitename}.scm.azurewebsites.net:443/{appname}.git`
-> 9. `git add .`
-> 10. `git commit -am "Initial Commit" `
-> 11. `git push azure master`
+    For more detailed comparison, see [here](https://azure.microsoft.com/en-us/documentation/articles/choose-web-site-cloud-service-vm/).
 
+### **Deploy to Azure App Service**
 
+1. Build App Srvice using Azure Portal
+    ![screenshot](img/create-web-app-service.png)
+    Or try it [here](https://tryappservice.azure.com/).
 
-### Deploy to Azure Virtual Machine 
+2. Configure App Service
 
-Build your VMs by Azure Portal, try it [here](https://azure.microsoft.com/en-us/trial/free-trial-virtual-machines/).
+    Add the following enironment variables in your Application Settings:
+    - WEBSITE _ NODE _ DEFAULT _ VERSION : `0.10.40`
+    - ROOT _ URL : `http://{sitename}.azurewebsites.net` or your custom domain if you've set that up
+    - MONGO _ URL : (Mongo DB connection string from a MongoDB hosted on [mLab](https://mlab.com/) or a VM)
+    - METEOR _ SETTINGS : JSON value equals to the entire contents of your `settings.json` file
+![screenshot](img/app-settings.png)
 
-For all users:
-> If you build Windows VMs, (i.e. Windows Server 2012) check previous content about how to demetoerize and deploy your app to Azure.
+3. Demeteorize and deploy
 
-> If you build Linux VMs, (i.e. Ubuntu 14.04 LTS) you can use [Mupx](https://github.com/arunoda/meteor-up/tree/mupx), please continue below steps.
+    So far, Azure hasn't enable native support for Meteor, you can track insider [here](https://feedback.azure.com/forums/169385-web-apps-formerly-websites/suggestions/6848937-add-support-for-meteor-on-azure-websites).
     
-> 1. Install mupx globally using npm: `Snpm install -g mupx`
-> 2. `cd tutorial`
-> 3. `mupx init` generate or manually add:   
-     * mup.json - Meteor Up configuration file, see exmpale [here](https://github.com/arunoda/meteor-up/tree/mupx#example-file)
-     * settings.json - Settings for Meteor's [settings API](http://docs.meteor.com/#meteor_settings)
-> 4. `mupx setup`
-> 5. `mupx deploy`
+    However, you can demeteorize your meteor app to run as a "standard" nodejs app to take advantage of Azure App Service's native support with features like `high availability with auto-patching`, `built-in autoscale` and `load balancing`. 
+    
+     
+    For **Windows** users, you can use [Azure-demeteorizer](https://github.com/christopheranderson/azure-demeteorizer).
+    Make sure you install and setup all the [prerequisites](https://github.com/christopheranderson/azure-demeteorizer#prerequisites) first,
+    then azure-demeteorizer can do all the magic for you:
+    > 1. Install azure-demeteorizer globally using npm:`npm install -g christopheranderson/azure-demeteorizer`
+    > 2. `cd tutorial`
+    > 3. `azure-demeteorizer build`
+    > 4. `azure-demeteorizer install`
+    > 5. `azure-demeteorizer zip`
+    > 6. `azure-demeteorizer deploy -s [sitename] -u [username] - p [password]`
+        - sitename: the name of your App.
+        - username: username for your site's [deployment credentials].
+        - password: password for your site's [deployment credentials].
+
+    For **Linux/Mac OSX** users, you can use [Demeteorizer](https://github.com/OnModulus/demeteorizer), however,
+    you have to demeteorize first, and do a continuous deployment with Git, TFS, GitHub, or Visual Studio Team Services (Here use Git as example):
+    > 1. Install Demeteorizer globally using npm`$ npm install -g demeteorizer`
+    > 2. `$ cd tutorial`
+    > 3. `$ demeteorizer`
+    > 4. `$ cd .demeteorized/bundle/programs/server`
+    > 5. `$ npm install`
+    > 6. `$ MONGO_URL=mongodb://localhost:27017/test PORT=3000 ROOT_URL=http://localhost:3000 npm start`
+    > If this is successful, then you can continue using `git remote` to push your app to Azure. (If you didn't choose continuous deployment using Git when you build your Azure App Service, you can manually set it up [here](https://azure.microsoft.com/en-us/documentation/articles/web-sites-publish-source-control/)).
+    > 7. `$ git init`
+    > 8. `$ git remote add azure  https://username@{sitename}.scm.azurewebsites.net:443/{appname}.git`
+    > 9. `$ git add .`
+    > 10. `$ git commit -am "Initial Commit"`
+    > 11. `$ git push azure master`
 
 
-### Deployment Choices
+
+### **Deploy to Azure Virtual Machine**
+
+1. Build VM by Azure Portal
+    ![screenshot](img/create-vm.png)
+    Or try it [here](https://azure.microsoft.com/en-us/trial/free-trial-virtual-machines/).
+
+2. Deploy
+
+    > If you build Windows VMs, (i.e. Windows Server 2012) check previous chapter about how to demetoerize and deploy your app to Azure.
+    
+    > If you build Linux VMs, (i.e. Ubuntu 14.04 LTS) you can use [Mupx](https://github.com/arunoda/meteor-up/tree/mupx), please continue the following steps:
+    
+    > 1. Install mupx globally using npm: `npm install -g mupx`
+    > 2. `cd tutorial`
+    > 3. `mupx init` to generate or manually add:   
+         * mup.json - Meteor Up configuration file, see exmpale [here](https://github.com/arunoda/meteor-up/tree/mupx#example-file)
+         * settings.json - Settings for Meteor's [settings API](http://docs.meteor.com/#meteor_settings)
+    > 4. `mupx setup`
+    > 5. `mupx deploy`
+
+
+### **Deployment Choices**
+    
 ```html
 | Client OS | Server OS             | Solutions(Recommended) | Status | 
-|-----------|-----------------------|------------------------|--==----|
+|-----------|-----------------------|------------------------|--------|
 | Windows   | Windows               | Azure-demeteorizer     |    ✔   |
 | Windows   | Linux                 | Mupx                   |    ✔   |
 | Linux     | Windows               | Demeteorizer           |    ✔   |
 | Linux     | Linux                 | Mupx                   |    ✔   |
 ```
 
-To deploy on Modulus, DigitalOcean, Galaxy, check the official deployment book [here](http://meteortips.com/deployment-tutorial/).
+*Other deployment on Modulus, DigitalOcean, Galaxy, please check the official deployment book [here](http://meteortips.com/deployment-tutorial/).
 
 
-## Enable SSL
-If you have deployed your app to Azure App Service, 
-by default, Azure already enables HTTPS for your app with a wildcard certificate for the *.azurewebsites.net domain. 
-If you don't plan to configure a custom domain, then you can benefit from the default HTTPS certificate. SRead more [here](https://azure.microsoft.com/en-us/documentation/articles/web-sites-configure-ssl-certificate/)
+## ***Enable SSL***
+- If you have deployed your app to Azure App Service:
 
-(Also for a better performance and connectivity, you can enable websockets instead of long-polling in your App Service, simply by one-click in `Application settings` through Azure portal.)
+    - By default, Azure already enables HTTPS for your app with a wildcard certificate for the *.azurewebsites.net domain. 
+    If you don't plan to configure a custom domain, then you can benefit from the default HTTPS certificate. 
+    Read more [here](https://azure.microsoft.com/en-us/documentation/articles/web-sites-configure-ssl-certificate/)
 
-If you have deployed your app using Mupx, you can add SSL support follow [here](https://github.com/arunoda/meteor-up/tree/mupx#ssl-support), however, you have to obtain an SSL certificate from a certificate authority (CA) and a private key first. 
+    - For a better performance and connectivity, you can enable websockets instead of long-polling in your App Service, simply by one-click in `Application settings` through Azure portal.
 
-For other deployments, you might set up your SSL manually.
+- If you have deployed your app to VMs using Mupx:
+    
+    - You can add SSL support following [here](https://github.com/arunoda/meteor-up/tree/mupx#ssl-support), however, you have to obtain your own SSL certificate from a certificate authority (CA) and a private key first. 
+
+
+- For other deployments, you might set up your SSL manually.
 
 
 
-## Sandbox Test
+## ***Sandbox Test***
 If you have deployed the `tutorial` app and enabled SSL successfully in a public server.
 Then you can follow this step to do a sanbox test in Amazon Mechanical Turk.
 

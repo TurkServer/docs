@@ -1,6 +1,6 @@
 # Site settings
 title: VirtualLab
 baseurl: 
-
+host:
 # Build settings
 markdown: redcarpet
