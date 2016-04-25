@@ -20,26 +20,26 @@ For more information, regarding how to build this app, see [here](/tutorial.html
 TurkServer is built on top of [Meteor](https://www.meteor.com/).
 Meteor supports OS X, Windows, and Linux, and is simple to install. 
 
-```html
-| OS      | Version             | Status | 
-|---------|---------------------|--------|
-| Windows | 10                  |    ✔   |
-| Windows | 8.1                 |    ✔   |
-| Windows | 7                   |    ✔   |
-| Windows | Server 2012         |    ✔   |
-| Windows | Server 2008         |    ✔   |
-|  Linux  | X86                 |    ✔   | 
-|  Linux  | x86_64              |    ✔   | 
-|   OSX   | 10.7(Lion) and above|    ✔   | 
-```
+    ```html
+    | OS      | Version             | Status | 
+    |---------|---------------------|--------|
+    | Windows | 10                  |    ✔   |
+    | Windows | 8.1                 |    ✔   |
+    | Windows | 7                   |    ✔   |
+    | Windows | Server 2012         |    ✔   |
+    | Windows | Server 2008         |    ✔   |
+    |  Linux  | X86                 |    ✔   | 
+    |  Linux  | x86_64              |    ✔   | 
+    |   OSX   | 10.7(Lion) and above|    ✔   | 
+    ```
 
-On Windows?
+    On Windows?
 
-  [Download the official Meteor installer](https://install.meteor.com/windows)
+    [Download the official Meteor installer](https://install.meteor.com/windows)
 
-On OS X or Linux?
+    On OS X or Linux?
 
-  `curl https://install.meteor.com/ | sh`
+    `curl https://install.meteor.com/ | sh`
 
 
 
@@ -87,11 +87,11 @@ On OS X or Linux?
 4.  Run your app
     > `meteor --settings settings.json`
 
-    In your console you should see:
+    In your console, you should see:
     
     ![screenshot](img/tutorial-console.png)
     
-    Open your browser:   
+    Open your browser, you should see:   
     ![screenshot](img/tutorial-start.png)
     Navigate to via http://localhost:3000/turkserver, login with your password, enter the admin dashboard:
     ![screenshot](img/turkserver.png)
@@ -122,13 +122,14 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
 1. Build App Srvice using Azure Portal
     ![screenshot](img/create-web-app-service.png)
     Or try it [here](https://tryappservice.azure.com/).
+    (Note: Please don't forget to set your `deployment credentials`.)
 
 2. Configure App Service
 
     Add the following enironment variables in your Application Settings:
     - WEBSITE _ NODE _ DEFAULT _ VERSION : `0.10.40`
     - ROOT _ URL : `http://{sitename}.azurewebsites.net` or your custom domain if you've set that up
-    - MONGO _ URL : (Mongo DB connection string from a MongoDB hosted on [mLab](https://mlab.com/) or a VM)
+    - MONGO _ URL : (Mongo DB connection string from a MongoDB hosted on [MongoLab](https://mlab.com/) or a VM)
     - METEOR _ SETTINGS : JSON value equals to the entire contents of your `settings.json` file
 ![screenshot](img/app-settings.png)
 
@@ -140,8 +141,8 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
     
      
     For **Windows** users, you can use [Azure-demeteorizer](https://github.com/christopheranderson/azure-demeteorizer).
-    Make sure you install and setup all the [prerequisites](https://github.com/christopheranderson/azure-demeteorizer#prerequisites) first,
-    then azure-demeteorizer can do all the magic for you:
+    Make sure you install and meet all the [prerequisites](https://github.com/christopheranderson/azure-demeteorizer#prerequisites) first, (Note: Visual Studio 2013 would be the most comaptible choice for most users.)
+    then Azure-demeteorizer can do all the magic for you:
     > 1. Install azure-demeteorizer globally using npm:`npm install -g christopheranderson/azure-demeteorizer`
     > 2. `cd tutorial`
     > 3. `azure-demeteorizer build`
@@ -174,7 +175,7 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
 1. Build VM by Azure Portal
     ![screenshot](img/create-vm.png)
     Or try it [here](https://azure.microsoft.com/en-us/trial/free-trial-virtual-machines/).
-
+    (Note: Please don't forget to set your deployment credentials.)
 2. Deploy
 
     > If you build Windows VMs, (i.e. Windows Server 2012) check previous chapter about how to demetoerize and deploy your app to Azure.
@@ -211,7 +212,7 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
     If you don't plan to configure a custom domain, then you can benefit from the default HTTPS certificate. 
     Read more [here](https://azure.microsoft.com/en-us/documentation/articles/web-sites-configure-ssl-certificate/)
 
-    - For a better performance and connectivity, you can enable websockets instead of long-polling in your App Service, simply by one-click in `Application settings` through Azure portal.
+    - For a better performance and connectivity, you can turn on websockets instead of long-polling in your App Service, simply by one-click in `Application settings` through Azure portal.
 
 - If you have deployed your app to VMs using Mupx:
     
