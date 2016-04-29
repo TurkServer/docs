@@ -152,7 +152,9 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
         - sitename: the name of your App.
         - username: username for your site's [deployment credentials].
         - password: password for your site's [deployment credentials].
-
+    
+    >  (Note: For a full respect of your changes in **Continuous Deployment**, you need stop server during step 6.)
+     
     For **Linux/Mac OSX** users, you can use [Demeteorizer](https://github.com/OnModulus/demeteorizer), however,
     you have to demeteorize first, and do a continuous deployment with Git, TFS, GitHub, or Visual Studio Team Services (Here use Git as example):
     > 1. Install Demeteorizer globally using npm`$ npm install -g demeteorizer`
@@ -167,7 +169,7 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
     > 9. `$ git add .`
     > 10. `$ git commit -am "Initial Commit"`
     > 11. `$ git push azure master`
-
+    
 
 
 ### **Deploy to Azure Virtual Machine**
@@ -202,7 +204,7 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
 | Linux     | Linux                 | Mupx                   |    ✔   |
 ```
 
-*Other deployment on Modulus, DigitalOcean, Galaxy, please check the official deployment book [here](http://meteortips.com/deployment-tutorial/).
+*For other deployments on Modulus, DigitalOcean, Galaxy, please check the official deployment book [here](http://meteortips.com/deployment-tutorial/).
 
 
 ## ***Enable SSL***
@@ -269,6 +271,7 @@ which shows the "home" template and prompts you to accept the HIT:
 
 
 ## Reference
-  Turkserver v0.5.0 API Reference:  See [turkserver.meteor.com](#).(Coming soon)
 
-  If you have any question: Please contact the developer [here](https://kgao.github.io/#contact)
+Turkserver v0.5.0 API Reference:  See [turkserver.meteor.com](#).(Coming soon)
+
+If you have any question: Please contact the developer [here](https://kgao.github.io/#contact)
