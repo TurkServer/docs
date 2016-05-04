@@ -1,6 +1,6 @@
 ---
 layout: default
-title: T
+title: Tutorial
 ---
 
 > Much of this fantastic tutorial is due to the excellent work of [Lili Dworkin](http://lilianne.me/).

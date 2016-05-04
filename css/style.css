@@ -24,6 +24,12 @@ h6 * {
     font-family: 'Arvo', serif;
     font-weight: 300;
 }
+
+img {
+    margin: 0 auto;
+    display: block;
+}
+
 header {
     padding: 10px;
     top: 0;
