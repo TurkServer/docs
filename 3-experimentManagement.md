@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Experiment Management
+icon: fa fa-flask
 ---
 
 # Managing an Active Experiment

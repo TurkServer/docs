@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Quick Start
+icon: fa fa-rocket
 ---
 
 > This quick start will guide you to setup, run, deploy and test your first Turkserver app.  
@@ -11,7 +12,7 @@ Version: v0.5.0
 Example project: [Tutorial](https://github.com/VirtualLab/tutorial). 
 For more information, regarding how to build this app, see [here](/tutorial.html).
 
-
+{% include arrow.html %}
 
 ## ***Install***
 1. Git: See [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 
@@ -42,8 +43,8 @@ Meteor supports OS X, Windows, and Linux, and is simple to install.
     `curl https://install.meteor.com/ | sh`
 
 
-
 ## ***Getting Started***
+<div markdown="1" class=title id=GetStart></div>
 
 1.  Checkout the project 
     > `git clone https://github.com/VirtualLab/tutorial.git`
@@ -272,6 +273,6 @@ which shows the "home" template and prompts you to accept the HIT:
 
 ## Reference
 
-Turkserver v0.5.0 API Reference:  See [turkserver.meteor.com](#).(Coming soon)
+Turkserver v0.5.0 API Reference:  See [Turkserver.meteorapp.com](https://turkserver.meteorapp.com/)
 
 If you have any question: Please contact the developer [here](https://kgao.github.io/#contact)

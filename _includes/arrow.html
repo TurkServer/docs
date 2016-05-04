@@ -1,0 +1,30 @@
+<div id="arrow">
+  <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+  crossorigin="anonymous"></script>
+
+  <script>
+    /*Arrow-Process-Bar*/ 
+        jQuery( document ).ready(function() { var back =jQuery(".prev"); var next = jQuery(".next"); var steps
+        = jQuery(".step"); next.bind("click", function() { jQuery.each( steps, function( i ) { if (!jQuery(steps[i]).hasClass('current')
+        && !jQuery(steps[i]).hasClass('done')) { jQuery(steps[i]).addClass('current'); jQuery(steps[i - 1]).removeClass('current').addClass('done');
+        return false; } }) }); back.bind("click", function() { jQuery.each( steps, function( i ) { if (jQuery(steps[i]).hasClass('done')
+        && jQuery(steps[i + 1]).hasClass('current')) { jQuery(steps[i + 1]).removeClass('current'); jQuery(steps[i]).removeClass('done').addClass('current');
+        return false; } }) }); })
+  </script>
+
+  <div class="container">
+    <div class="wrapper">
+      <div class="arrow-steps clearfix">
+        <div class="step current"> <span> Step 1 Install</span> </div>
+        <div class="step"> <span>Step 2 Local</span> </div>
+        <div class="step"> <span> Step 3 Deployment</span> </div>
+        <div class="step"> <span>Step 4 Sandbox</span> </div>
+      </div>
+      <div class="nav clearfix">
+        <a href="#" class="prev">Previous</a>
+        <a href="#" class="next pull-right">Next</a>
+      </div>
+    </div>
+  </div>
+
+</div>

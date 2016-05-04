@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Design Considerations
+icon: fa fa-lightbulb-o
 ---
 
 # Design Considerations
