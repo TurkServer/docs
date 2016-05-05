@@ -1,7 +1,14 @@
 ---
 layout: default
+author: Kevin Gao
+date: '2015-05-05'
 title: Quick Start
+slug: quick-start
+permalink: quickstart
+published: true
 icon: fa fa-rocket
+category: navigation
+order: 1
 ---
 
 > This quick start will guide you to step by step, from install and run a local instance to deploy and test your first Turkserver app in real world.  
@@ -100,7 +107,7 @@ So let's start the journey now! (Click the "Next" button on the right)
 
     How to install? See [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
-    *Using GitHub has the install source is temporary until the package reaches "beta"*.
+    *Using GitHub has the install source is temporary until the Turkserver package reaches "beta"*.
 
 2. **Meteor**
 
@@ -378,7 +385,7 @@ which shows the "home" template and prompts you to accept the HIT:
 
 </p><div markdown="1" class="block"><p>
 
-## ***Ready to launch***
+## ***Read to launch***
 
 **Congratulations!** Now, you can you made it! You can modify the demo, turn off sandbox in setting and launch your own experiments in Amazon Mturk!
 

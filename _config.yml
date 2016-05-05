@@ -1,6 +1,7 @@
 # Site settings
-title: The Virtual Lab
+title: VirtualLab
 baseurl: 
 host:
 # Build settings
 markdown: redcarpet
+include: ["_pages"]

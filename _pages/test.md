@@ -1,9 +1,16 @@
 ---
 layout: default
-title: Intro
+author: Kevin Gao
+date: '2015-05-05'
+title: Test
+slug: test
+permalink: test
+published: false
 icon: fa fa-info-circle
----
+category: 
+order: 
 
+---
 # <i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp; The Virtual Lab
 
 Since the 1950s, social scientists of all disciplines have been studying 

@@ -1,7 +1,14 @@
 ---
 layout: default
+author: 
+date: '2015-05-05'
 title: Design Considerations
-icon: fa fa-lightbulb-o
+slug: design-considerations
+permalink: designConsiderations
+published: true
+icon:
+category: design
+order: 1
 ---
 
 # Design Considerations

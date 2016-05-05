@@ -1,7 +1,14 @@
 ---
 layout: default
+author: kgao
+date: '2015-05-05'
 title: Experiment Management
-icon: fa fa-flask
+slug: experiment-management
+permalink: experimentManagement
+published: true
+icon:
+category: management
+order: 1
 ---
 
 # Managing an Active Experiment

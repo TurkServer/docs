@@ -1,8 +1,15 @@
 ---
 layout: default
+author: Lili Dworkin
+date: '2015-05-05'
 title: Tutorial
+slug: tutorial
+permalink: tutorial
+published: true
+icon: 
+category: examples
+order: 1
 ---
-
 > Much of this fantastic tutorial is due to the excellent work of [Lili Dworkin](http://lilianne.me/).
 
 ## Getting Started
