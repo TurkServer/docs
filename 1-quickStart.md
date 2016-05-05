@@ -378,7 +378,7 @@ which shows the "home" template and prompts you to accept the HIT:
 
 </p><div markdown="1" class="block"><p>
 
-## ***Read to launch***
+## ***Ready to launch***
 
 **Congratulations!** Now, you can you made it! You can modify the demo, turn off sandbox in setting and launch your own experiments in Amazon Mturk!
 

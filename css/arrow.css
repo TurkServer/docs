@@ -14,10 +14,10 @@
 }
 
 #arrow .wrapper {
-	display: table-cell;
-	height: 200px;
+	display: flex;
+  display: -webkit-flex;
 	vertical-align: middle;
-  padding:0;
+  padding: 80px 0px;
 }
 
 #arrow.pull-right {
