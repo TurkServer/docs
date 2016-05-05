@@ -1,5 +1,5 @@
 @import url("//fonts.googleapis.com/css?family=Arvo:400,700|Raleway:400,300,500|Open+Sans:400,700,900,300");
-*.page-content {
+/**.page-content {
     font-family: 'Raleway', serif;
     font-weight: 300;
 }
@@ -23,7 +23,7 @@ h5 *,
 h6 * {
     font-family: 'Arvo', serif;
     font-weight: 300;
-}
+}*/
 
 img {
     margin: 0 auto;
@@ -60,14 +60,30 @@ header .site-nav .page-link:hover {
 }
 footer {
     background-color: #333;
-    color: ivory;
+    color: #99979c;
     width: 100%;
     padding: 10px;
     bottom: 0;
     position: relative;
     text-align: center;
 }
-  @media screen and (max-width: 600px) {
+
+footer a{
+  color: Ivory;
+  
+}
+
+footer a:hover{
+  color: Ivory;
+  
+}
+
+footer a:visited{
+  color: Ivory;
+  
+}
+
+ @media screen and (max-width: 600px) {
     .site-nav {
       opacity:0.85;
       position: absolute;

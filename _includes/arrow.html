@@ -4,25 +4,98 @@
 
   <script>
     /*Arrow-Process-Bar*/ 
-        jQuery( document ).ready(function() { var back =jQuery(".prev"); var next = jQuery(".next"); var steps
-        = jQuery(".step"); next.bind("click", function() { jQuery.each( steps, function( i ) { if (!jQuery(steps[i]).hasClass('current')
-        && !jQuery(steps[i]).hasClass('done')) { jQuery(steps[i]).addClass('current'); jQuery(steps[i - 1]).removeClass('current').addClass('done');
-        return false; } }) }); back.bind("click", function() { jQuery.each( steps, function( i ) { if (jQuery(steps[i]).hasClass('done')
-        && jQuery(steps[i + 1]).hasClass('current')) { jQuery(steps[i + 1]).removeClass('current'); jQuery(steps[i]).removeClass('done').addClass('current');
-        return false; } }) }); })
+    jQuery(document).ready(function() {
+      var back = jQuery(".prev");
+      var next = jQuery(".next");
+      var steps = jQuery(".step");
+      var blocks = jQuery(".block");      
+      // console.log(steps.length); 5
+      // console.log(blocks.length); 5
+      //init
+      var max = 0;
+      var count;
+      back.hide();
+      jQuery(blocks[0]).show();
+      next.bind("click", function() {
+          jQuery.each(steps, function(i) {
+              count = 0;
+              if (!jQuery(steps[i]).hasClass('current') &&
+                  !jQuery(steps[i]).hasClass('done')) {
+                  jQuery(steps[i]).addClass('current');
+                  jQuery(steps[i - 1]).removeClass('current').addClass('done');   
+                  count++;
+                  max=count>max?count:max;
+                  return false;
+              }
+          });
+          //remove next btn
+          if(jQuery(steps[count]).hasClass('first')){
+              next.hide();
+              back.show();
+          }else{
+              next.show();
+          }
+          if(count>0){
+             back.show();
+          }
+          
+          //blocks logic:
+           jQuery.each(blocks, function(i) {
+              count = 0;
+              if (!jQuery(blocks[i]).hasClass('current') &&
+                  !jQuery(blocks[i]).hasClass('done')) {
+                  jQuery(blocks[i]).addClass('current');
+                  jQuery(blocks[i - 1]).removeClass('current').addClass('done');   
+                  return false;
+              }
+          });
+      });
+      back.bind("click", function() {
+          jQuery.each(steps, function(i) {
+              if (jQuery(steps[i]).hasClass('done') &&
+                  jQuery(steps[i + 1]).hasClass('current')) {
+                  jQuery(steps[i + 1]).removeClass('current');
+                  jQuery(steps[i]).removeClass('done').addClass('current');
+                  return false;
+              }
+          });
+          //remove prev btn
+          if(jQuery(steps[count]).hasClass('first')&&jQuery(steps[count]).hasClass('current')){
+              back.hide();
+              next.show();
+          }else{
+              back.show();
+          }
+          if(count<max){
+              next.show();
+          }
+          
+          //blocks logic:
+          jQuery.each(blocks, function(i) {
+              if (jQuery(blocks[i]).hasClass('done') &&
+                  jQuery(blocks[i + 1]).hasClass('current')) {
+                  jQuery(blocks[i + 1]).removeClass('current');
+                  jQuery(blocks[i]).removeClass('done').addClass('current');
+                  return false;
+              }
+          });
+      });
+  })
   </script>
 
   <div class="container">
     <div class="wrapper">
       <div class="arrow-steps clearfix">
-        <div class="step current"> <span> Step 1 Install</span> </div>
+        <div class="step first current"> <span>Step 0 Overview</span> </div>
+        <div class="step"> <span>Step 1 Install</span> </div>
         <div class="step"> <span>Step 2 Local</span> </div>
-        <div class="step"> <span> Step 3 Deployment</span> </div>
-        <div class="step"> <span>Step 4 Sandbox</span> </div>
+        <div class="step"> <span> Step 3 Deploy</span> </div>
+        <div class="step"> <span>Step 4 Test</span> </div>
+        <div class="step last"> <span><i class="fa fa-rocket" aria-hidden="true"></i></span></div>
       </div>
       <div class="nav clearfix">
-        <a href="#" class="prev">Previous</a>
-        <a href="#" class="next pull-right">Next</a>
+        <a href="#" class="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</a>
+        <a href="#" class="next pull-right">Next&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>

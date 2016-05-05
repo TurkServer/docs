@@ -15,12 +15,9 @@
 
 #arrow .wrapper {
 	display: table-cell;
-	height: 400px;
+	height: 200px;
 	vertical-align: middle;
-}
-
-#arrow .nav {
-	margin-top: 40px;
+  padding:0;
 }
 
 #arrow.pull-right {
@@ -29,16 +26,15 @@
 
 #arrow a, 
 #arrow a:active {
-	color: #333;
+	color: #999;
 	text-decoration: none;
 }
 
 #arrow a:hover {
-	color: #999;
+	color: #333;
 }
 
 /* Breadcrups CSS */
-
 #arrow .arrow-steps .step {
 	font-size: 14px;
 	text-align: center;
@@ -46,7 +42,7 @@
 	cursor: default;
 	margin: 0 3px;
 	padding: 10px 10px 10px 30px;
-	min-width: 180px;
+	min-width: 120px;
 	float: left;
 	position: relative;
 	background-color: #d9e3f7;
@@ -56,6 +52,10 @@
 	user-select: none; 
   transition: background-color 0.2s ease;
   line-height: 16px;
+}
+
+#arrow .arrow-steps .last {
+  min-width: 20px;
 }
 
 #arrow .arrow-steps .step:after,
@@ -118,6 +118,34 @@
 	border-left: 17px solid #23468c;	
 }
 
+#arrow .prev{
+    display: block;
+    position:fixed;
+    top:338px;
+    left:3%;
+    padding:5px;
+    border-radius: 4px;
+    background: #d9e3f7;
+    border:1px;
+    border-style: solid;
+    /* no svg fallback */
+    font-size: 20px;
+}
+
+#arrow .next {
+    display: block;    
+    position:fixed;
+    top:338px;
+    right:3%;
+    padding:5px;  
+    border-radius: 4px;
+    background: #d9e3f7;
+    border:1px;
+    border-style: solid;
+    /* no svg fallback */
+    font-size: 20px;
+}
+
 /* Enable rotation - vertical arrow */
 /*#arrow div.arrow-steps {*/
    /*  -ms-transform: rotate(90deg); IE 9 */
@@ -130,3 +158,11 @@
    /* -webkit-transform: rotate(-90deg);  Safari */
    /*  transform: rotate(-90deg); Standard syntax */
 /*} */
+
+.block {
+  display:none;
+}
+
+.current {
+  display:block;
+}

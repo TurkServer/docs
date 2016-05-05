@@ -4,22 +4,111 @@ title: Quick Start
 icon: fa fa-rocket
 ---
 
-> This quick start will guide you to setup, run, deploy and test your first Turkserver app.  
+> This quick start will guide you to step by step, from install and run a local instance to deploy and test your first Turkserver app in real world.  
 
 
-Version: v0.5.0
+Version: 0.5.0
 
 Example project: [Tutorial](https://github.com/VirtualLab/tutorial). 
 For more information, regarding how to build this app, see [here](/tutorial.html).
 
 {% include arrow.html %}
 
-## ***Install***
-1. Git: See [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 
 
-2. Meteor:
-TurkServer is built on top of [Meteor](https://www.meteor.com/).
-Meteor supports OS X, Windows, and Linux, and is simple to install. 
+</p><div markdown="1" class="block current"><p>
+## ***Background***
+
+[TurkServer](https://github.com/HarvardEconCS/turkserver-meteor) is a framework based on the JavaScript app platform [Meteor](https://www.meteor.com/) that makes it easy to build interactive web-based user experiments for deployment on [Amazon Mechanical Turk](https://www.mturk.com/mturk/welcome).
+
+This tutorial will explain how to get up and running with TurkServer. The intended audience is someone who:
+
+1. **Is familiar with [Amazon Mechanical Turk](https://www.mturk.com/mturk/welcome)** and understands how to request and approve work. If you have never used Mechanical Turk before, we recommend you explore a bit first. Go [here](https://requester.mturk.com/) and create one of the example projects.
+xs
+2. **Knows the basics of the JavaScript app platform [Meteor](https://www.meteor.com/).** If you have never used Meteor before, that's fine -- it's quite easy to learn. Before continuing with this tutorial, [install](https://www.meteor.com/install) Meteor and then complete the [to-do app tutorial](https://www.meteor.com/tutorials/blaze/creating-an-app).
+
+TurkServer is designed around the Meteor framework. There are many
+reasons that Meteor is especially powerful for web development; see
+[this post](http://www.quora.com/Should-I-use-Meteor-Why) for a
+summary. But more importantly, there are
+[tons of learning resources](https://www.meteor.com/learn) for new
+users to get started. The design philosophy of TurkServer is to stick
+to standard Meteor as much as possible, while minimizing the need to
+use custom APIs. This means that most of the outstanding Meteor
+documentation on the Internet will be useful, and that most of the
+required knowledge is not specific to TurkServer.
+
+All the code for the project that you will build during the tutorial can be found [here](https://github.com/VirtualLab/tutorial). If you have questions, comments, or suggestions, please add a Github issue to that repo.
+
+## ***The Basics***
+
+Before getting started, it will help to define some terminology used by TurkServer. Many of these concepts are from Mechanical Turk, and should therefore be familiar to you, but others will be new.
+
+- **Worker**: A Mechanical Turk user.
+- **HIT**: A task that workers can complete on Mechanical Turk. A HIT
+  can be completed by multiple workers, but each worker can only
+  complete a particular HIT once.
+- **External Question**: A HIT with an
+  [external question](http://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_ExternalQuestionArticle.html)
+  is hosted on your *own website* and displayed in an iframe in the
+  Worker's web browser. TurkServer facilitates the process of building
+  external HITs.
+- **HIT Type**: A way to define the properties of a HIT, such as its title, description, and monetary reward. Each HIT has exactly one HIT type, but you can create multiple HITs with the same HIT type (e.g. you might post a HIT on Monday and receive some data, and then post another HIT of the same HIT type on Tuesday to receive additional data).
+- **Batch**: Whereas a HIT Type is Mechanical Turk's way of grouping HITs together, a batch is TurkServer's way of grouping HITs together. The HIT Type determines *Mechanical Turk properties* of a HIT; the batch defines *TurkServer properties* of a HIT. When you create a HIT type in TurkServer, you must choose a batch for it. All HITs with that HIT type then belong to that batch and have the corresponding properties.
+- **Assignment**: When a worker accepts a HIT, an assignment is created. The assignment keeps track of the work that the worker does on this HIT. You can approve or reject the worker's assignment after he submits the HIT. 
+
+In using TurkServer, every Assignment of a HIT will go through one of three states (not necessarily in a linear fashion):
+
+1. **Lobby** -- Where a worker goes right after accepting the HIT, and also between participating in experiment instances.
+2. **Experiment Instance** -- Where the worker actually completes the
+   task. Experiments are a logical way of setting up interaction
+   between a group of workers and can consist of any number of
+   workers, including just one.
+3. **Exit Survey** -- Where the worker submits the HIT.
+
+> Each participant can be assigned to one instance at a time, but can
+> participate in multiple instance over the course of a HIT, so
+> that each instance can have one or more simultaneous
+> participants. This supports various synchronous and longitudinal
+> experiment designs.
+
+**The developer using TurkServer is responsible for building the user
+  interface for each of these stages.** In other words, TurkServer
+  assumes you already have a Meteor app that controls the experience
+  workers have after accepting your HIT and before submitting
+  it. TurkServer is just the middleman between your app and Mechanical
+  Turk. The framework will take care of connecting workers to your app
+  when they accept the HIT, and submitting their work to Mechanical
+  Turk when they are done with your HIT. TurkServer also allows you to
+  easily monitor your experiment while in progress. But you first need
+  to build the app that allows workers to complete the desired
+  task. 
+ 
+Haven't build the app yet? Don't worry, we will get you started 
+with one of our basic example projects - [Tutorial](https://github.com/VirtualLab/tutorial).
+
+So let's start the journey now! (Click the "Next" button on the right)
+   
+
+</p></div><p>
+  
+  
+</p><div markdown="1" class="block"><p>
+## ***Install***
+1. **Git**
+
+    Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
+
+    How to install? See [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+
+    *Using GitHub has the install source is temporary until the package reaches "beta"*.
+
+2. **Meteor**
+
+    TurkServer is built on top of [Meteor](https://www.meteor.com/).
+    
+    Meteor.js is a cohesive development platform, a collection of libraries and packages that are bound together in a tidy way to make web development easier. 
+        
+    Meteor supports OS X, Windows, and Linux, and is simple to install. 
 
     ```html
     | OS      | Version             | Status | 
@@ -40,11 +129,13 @@ Meteor supports OS X, Windows, and Linux, and is simple to install.
 
     On OS X or Linux?
 
-    `curl https://install.meteor.com/ | sh`
+    `curl https://install.meteor.com/ | sh`  
+    
+</p></div><p>
 
-
+</p><div markdown="1" class="block"><p>
 ## ***Getting Started***
-<div markdown="1" class=title id=GetStart></div>
+
 
 1.  Checkout the project 
     > `git clone https://github.com/VirtualLab/tutorial.git`
@@ -56,7 +147,8 @@ Meteor supports OS X, Windows, and Linux, and is simple to install.
     
     > `git clone https://github.com/HarvardEconCS/turkserver-meteor.git packages/turkserver` (Please note: Using GitHub has the install source is temporary until it's published as a Meteor package)
     
-    > `meteor add mizzao:turkserver`
+    > `meteor add mizzao:turkserver` (Please note: If you are using Windows Command Prompt, you might not get notified in real time, you can simple press any key during this step or use Windows Powershell instead.)
+
 3.  Create settings file
     
     Under the root of your project, create a `settings.json` file, follow `settings-template.json`, fill in "adminPassword", "accessKeyId", and "secretAccessKey".
@@ -96,7 +188,10 @@ Meteor supports OS X, Windows, and Linux, and is simple to install.
     ![screenshot](img/tutorial-start.png)
     Navigate to via http://localhost:3000/turkserver, login with your password, enter the admin dashboard:
     ![screenshot](img/turkserver.png)
+    
+</p></div><p>
 
+</p><div markdown="1" class="block"><p>
 ## ***Deployment***
 
 To deploy your meteor app in cloud, there are many choices.
@@ -207,9 +302,18 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
 
 *For other deployments on Modulus, DigitalOcean, Galaxy, please check the official deployment book [here](http://meteortips.com/deployment-tutorial/).
 
+</p></div><p>
 
-## ***Enable SSL***
-- If you have deployed your app to Azure App Service:
+</p><div markdown="1" class="block"><p>
+## ***Test***
+
+This step is showing you how to do your sandbox test in Amazon Mechanical Turk, 
+according to Amazon payment requirements:
+`ExternalURL` - The URL of your web app, to be displayed in a frame in the Worker's web browser. This URL must use the **HTTPS** protocol.
+It might take some time for you to setup your own SSL server if you are not using Azure, however, we strongly recommand you complete the test before actually make your project go live.
+
+### **Enable SSL**
+- If you have deployed your app to Azure App Service:(Recommend for beginners)
 
     - By default, Azure already enables HTTPS for your app with a wildcard certificate for the *.azurewebsites.net domain. 
     If you don't plan to configure a custom domain, then you can benefit from the default HTTPS certificate. 
@@ -226,7 +330,7 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
 
 
 
-## ***Sandbox Test***
+### **Sandbox Test**
 If you have deployed the `tutorial` app and enabled SSL successfully in a public server.
 Then you can follow this step to do a sanbox test in Amazon Mechanical Turk.
 
@@ -270,9 +374,17 @@ which shows the "home" template and prompts you to accept the HIT:
     **Congratulations!** -- You have successfully posted a HIT, completed it, and paid yourself for doing so.
 
 
+</p></div><p>
 
-## Reference
+</p><div markdown="1" class="block"><p>
+
+## ***Read to launch***
+
+**Congratulations!** Now, you can you made it! You can modify the demo, turn off sandbox in setting and launch your own experiments in Amazon Mturk!
+
+## ***Reference***
 
 Turkserver v0.5.0 API Reference:  See [Turkserver.meteorapp.com](https://turkserver.meteorapp.com/)
 
 If you have any question: Please contact the developer [here](https://kgao.github.io/#contact)
+</p></div><p>
