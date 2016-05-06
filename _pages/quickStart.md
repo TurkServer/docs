@@ -73,7 +73,7 @@ In using TurkServer, every Assignment of a HIT will go through one of three stat
 3. **Exit Survey** -- Where the worker submits the HIT.
 
 > Each participant can be assigned to one instance at a time, but can
-> participate in multiple instance over the course of a HIT, so
+> participate in multiple instances over the course of a HIT, so
 > that each instance can have one or more simultaneous
 > participants. This supports various synchronous and longitudinal
 > experiment designs.
@@ -107,7 +107,7 @@ So let's start the journey now! (Click the "Next" button on the right)
 
     How to install? See [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
-    *Using GitHub has the install source is temporary until the Turkserver package reaches "beta"*.
+    *Using GitHub as the install source is temporary until the Turkserver package reaches "beta"*.
 
 2. **Meteor**
 
@@ -154,7 +154,7 @@ So let's start the journey now! (Click the "Next" button on the right)
     
     > `git clone https://github.com/HarvardEconCS/turkserver-meteor.git packages/turkserver` (Please note: Using GitHub has the install source is temporary until it's published as a Meteor package)
     
-    > `meteor add mizzao:turkserver` (Please note: If you are using Windows Command Prompt, you might not get notified in real time, you can simple press any key during this step or use Windows Powershell instead.)
+    > `meteor add mizzao:turkserver` (Please note: If you are using Windows Command Prompt, you might not get notified in real time, you can simply press any key during this step or use Windows Powershell instead.)
 
 3.  Create settings file
     
