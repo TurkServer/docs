@@ -2,7 +2,7 @@
 layout: default
 author: Lili Dworkin
 date: '2015-05-05'
-title: Tutorial
+title: Basic Tutorial
 slug: tutorial
 permalink: tutorial
 published: true
@@ -10,7 +10,16 @@ icon:
 category: examples
 order: 1
 ---
-> Much of this fantastic tutorial is due to the excellent work of [Lili Dworkin](http://lilianne.me/).
+
+This tutorial walks you through building a simple, but fully functional app 
+that you can deploy and that demonstrates many of the features of TurkServer.
+ If you'd prefer to start hacking from a working example, you can start 
+ poking around [the code][1] directly and follow the [deployment 
+ instructions](quickstart) to get it online.   
+  
+[1]: https://github.com/VirtualLab/tutorial    
+
+> Much of this fantastic tutorial is due to the excellent work of [Lili Dworkin](https://github.com/ldworkin).
 
 ## Getting Started
 
@@ -511,6 +520,12 @@ To see if this worked properly, go through the HIT yet again. Be sure to click t
 
 So we've set the bonus value, but we haven't yet approved the worker's assignment or paid the bonus. We can't test out this functionality while running as a fake user, so we'll have to move to Mechanical Turk's sandbox environment.
 
+## Deployment
+
+To continue with the tutorial, follow the [deployment instructions]
+(quickstart) so that you can use the actual MTurk API and get the app running
+ in the MTurk sandbox.
+
 ## HITs and HITTypes
 
 The next step is to create a new HIT type. We can do this in the admin
@@ -546,53 +561,15 @@ At this point we're all set to create our HIT. Click on "HITs" in the navigation
 
 ![screenshot](img/new_hit.png)
 
+## Using the Mechanical Turk Sandbox
 
-## Other Features - **UNFINISHED**
+<!-- AM: this ends rather abruptly. 
+  I'd like to put the sandbox section back here if possible. 
+  --> 
 
-That concludes the main section of this tutorial; in this section I
-will briefly point out some other features of TurkServer that are
-worth knowing about.
+The MTurk Sandbox allows you to test and debug your app without spending real
+ money. See the [deployment instructions](quickstart) for how to post a HIT 
+ and pay your workers.    
 
-### Batches and Treatments
 
-TurkServer uses the concept of **batches** to logically group
-instances of experiments together. Each batch limits repeat
-participation.
 
-Batch controls the assignment of incoming users to
-**treatments**. Treatments can have structured data which are made
-available to the front-end app under `TurkServer.treatment()`, making
-them a useful way to control the display of different parts of the
-user interface or app behavior. They can be defined for batches,
-users, or worlds.
-
-Batches and treatments can be viewed and edited from the
-administration interface.
-
-###
-
-Meteor already makes it pretty easy to design a reactive and responsive user interface, but you may find some of the following packages useful.
-
-- [Bootstrap](http://getbootstrap.com/), a CSS framework for front-end development.
-- [Tutorials](https://github.com/mizzao/meteor-tutorials), a Meteor-specific tutorials package that I wrote for providing interactive and concise instructions for web apps. Very useful for delivering easily digestible experiment instructions.
-
-## Online Experiment Methodology
-
-While TurkServer provides much of the software components necessary
-for deploying web-based experiments, there is still a great deal that
-is helpful to know to ensure that your study goes smoothly and workers
-leave happy. The lab at
-[Microsoft Research NYC](http://research.microsoft.com/en-us/labs/newyork/)
-aims to pioneer the development of web-based behavioral experiments,
-and you should feel free to contact
-[Andrew Mao](http://www.andrewmao.net/) or
-[Sid Suri](http://www.sidsuri.com/) with questions about your
-experimental design.
-
-As design of web-based experiments is a quickly changing landscape, we
-hope to update this section in the future with links to a more
-comprehensive tutorial.
-
-## API Reference
-
-See [turkserver.meteor.com](https://turkserver.meteor.com).

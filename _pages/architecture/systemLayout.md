@@ -1,14 +1,12 @@
 ---
 layout: default
-author: 
-date: '2015-05-05'
-title: System Layout
-slug: system-layout
-permalink: systemLayout
+title: Architecture Overview
+slug: arch-overview
+permalink: arch-overview
 published: true
 icon:
 category: architecture
-order: 3
+order: 1
 ---
 
-# System Layout Info here
+# Architecture Overview

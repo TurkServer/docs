@@ -2,7 +2,7 @@
 layout: default
 author: 
 date: '2015-05-05'
-title: Architecture
+title: System Architecture
 slug: architecture
 permalink: architecture
 published: true

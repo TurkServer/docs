@@ -89,6 +89,6 @@ implement it from scratch: just grab their code and use it!
 
 # Next Steps
 
-Ready to jump in? Check out the [quick start](quickstart.html), a basic 
+Ready to jump in? Check out the [quick start](quickstart), a basic 
 (but fully functional) [tutorial app](tutorial.html), or read up on how to 
 think about [designing software-based online experiments](designConsiderations.html).
