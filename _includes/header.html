@@ -38,11 +38,11 @@
             <ul>
               {% for sub-post in sorted_pages%} 
               {% if sub-post.title and sub-post.category == post.slug %} <!--Sub Level Nav-->
-              <li><a class="page-link" href="{{ sub-post.url | prepend: site.baseurl }}"><i class="{{ sub-post.icon}}" aria-hidden="true"></i>&nbsp;{{ sub-post.title }}</a>
+              <li><a href="{{ sub-post.url | prepend: site.baseurl }}"><i class="{{ sub-post.icon}}" aria-hidden="true"></i>&nbsp;{{ sub-post.title }}</a>
                 <ul>
                   {% for deep-post in sorted_pages%}
                   {% if deep-post.title and deep-post.category == sub-post.slug %}<!--Deep Level Nav-->
-                  <li><a class="page-link" href="{{ deep-post.url | prepend: site.baseurl }}"><i class="{{ deep-post.icon}}" aria-hidden="true"></i>&nbsp;{{ deep-post.title }}</a>
+                  <li><a href="{{ deep-post.url | prepend: site.baseurl }}"><i class="{{ deep-post.icon}}" aria-hidden="true"></i>&nbsp;{{ deep-post.title }}</a>
                     <!--Next Level ... -->
                     <!--<ul>
                           <li><a class="page-link" href="#">Sub Deep 1</a></li>

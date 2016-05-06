@@ -17,11 +17,15 @@
 	display:block;
 	color:white;
 	text-decoration:none;
-	font-weight:300;
+	font-weight:500;
 	font-size:15px;
 	line-height:32px;
 	padding:0 15px;
 	font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+#primary_nav_wrap ul a:hover{
+  color:white;
 }
 
 #primary_nav_wrap ul li
@@ -39,7 +43,7 @@
 
 #primary_nav_wrap ul li:hover
 {
-	background:black;
+	background: darkred;
 }
 
 #primary_nav_wrap ul ul
@@ -49,7 +53,7 @@
 	top:100%;
 	left:0;
   background:black;
-  opacity: 0.65;
+  opacity: 0.90;
 	padding:0;
 }
 
