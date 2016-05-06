@@ -144,10 +144,10 @@ So let's start the journey now! (Click the "Next" button on the right)
 ## ***Getting Started***
 
 
-1.  Checkout the project 
+1.  **Checkout the project** 
     > `git clone https://github.com/VirtualLab/tutorial.git`
 
-2.  Add TurkServer package
+2.  **Add TurkServer package**
     
     Under the root of your project, add the turkserver meteor package:
     > `cd tutorial`
@@ -156,10 +156,13 @@ So let's start the journey now! (Click the "Next" button on the right)
     
     > `meteor add mizzao:turkserver` (Please note: If you are using Windows Command Prompt, you might not get notified in real time, you can simply press any key during this step or use Windows Powershell instead.)
 
-3.  Create settings file
+3.  **Create settings file**
     
-    Under the root of your project, create a `settings.json` file, follow `settings-template.json`, fill in "adminPassword", "accessKeyId", and "secretAccessKey".
-    (To retrieve your Amazon Mechanical Turk account key and secret pair, see [here](http://docs.aws.amazon.com/AWSMechTurk/latest/AWSMechanicalTurkGettingStartedGuide/SetUp.html)
+    Under the root of your project, create a `settings.json` file, follow `settings-template.json`.
+    
+    Fill in "adminPassword", "accessKeyId", and "secretAccessKey".
+    
+    (**Note**: To retrieve your Amazon Mechanical Turk `accessKeyId` and `secretAccessKey`, you need sign up AWS Account, see [here](http://docs.aws.amazon.com/AWSMechTurk/latest/AWSMechanicalTurkGettingStartedGuide/SetUp.html)
     )
     
     The file should look like this:
@@ -184,7 +187,7 @@ So let's start the journey now! (Click the "Next" button on the right)
     }
     ```    
        
-4.  Run your app
+4.  **Run your app**
     > `meteor --settings settings.json`
 
     In your console, you should see:
@@ -222,12 +225,12 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
 
 ### **Deploy to Azure App Service**
 
-1. Build App Service using Azure Portal
+1. **Build App Service using Azure Portal**
     ![screenshot](img/create-web-app-service.png)
     Or try it [here](https://tryappservice.azure.com/).
     (Note: Please don't forget to set your `deployment credentials`.)
 
-2. Configure App Service
+2. **Configure App Service**
 
     Add the following enironment variables in your Application Settings:
     - WEBSITE _ NODE _ DEFAULT _ VERSION : `0.10.40`
@@ -236,12 +239,13 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
     - METEOR _ SETTINGS : JSON value equals to the entire contents of your `settings.json` file
 ![screenshot](img/app-settings.png)
 
-3. Demeteorize and deploy
+3. **Deploy**
 
-    So far, Azure hasn't enable native support for Meteor, you can track insider [here](https://feedback.azure.com/forums/169385-web-apps-formerly-websites/suggestions/6848937-add-support-for-meteor-on-azure-websites).
+    Azure has native support for Node.js app, Azure App Service hasn't enable native support for Meteor, you can track insider [here](https://feedback.azure.com/forums/169385-web-apps-formerly-websites/suggestions/6848937-add-support-for-meteor-on-azure-websites).
     
-    However, you can demeteorize your meteor app to run as a "standard" nodejs app to take advantage of Azure App Service's native support with features like `high availability with auto-patching`, `built-in autoscale` and `load balancing`. 
+    However, we can still deploy to Azure App Service by **demeteorizer** - Which is a great tool to convert a Meteor app into a "standard" Node.js application. 
     
+    In this way, you can take advantage of the native support with features like `high availability with auto-patching`, `built-in autoscale` and `load balancing`.   
      
     For **Windows** users, you can use [Azure-demeteorizer](https://github.com/christopheranderson/azure-demeteorizer).
     Make sure you install and meet all the [prerequisites](https://github.com/christopheranderson/azure-demeteorizer#prerequisites) first, (Note: Visual Studio 2013 would be the most comaptible choice for most users.)
@@ -277,13 +281,13 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
 
 ### **Deploy to Azure Virtual Machine**
 
-1. Build VM by Azure Portal
+1. **Build VM by Azure Portal**
     ![screenshot](img/create-vm.png)
     Or try it [here](https://azure.microsoft.com/en-us/trial/free-trial-virtual-machines/).
     (Note: Please don't forget to set your deployment credentials.)
-2. Deploy
+2. **Deploy**
 
-    > If you build Windows VMs, (i.e. Windows Server 2012) check previous chapter about how to demetoerize and deploy your app to Azure.
+    > If you build Windows VMs, (i.e. Windows Server 2012) please check previous chapter **"Deploy to Azure App Service"** about how to demetoerize and deploy your app to Azure.
     
     > If you build Linux VMs, (i.e. Ubuntu 14.04 LTS) you can use [Mupx](https://github.com/arunoda/meteor-up/tree/mupx), please continue the following steps:
     
@@ -341,28 +345,39 @@ It might take some time for you to setup your own SSL server if you are not usin
 If you have deployed the `tutorial` app and enabled SSL successfully in a public server.
 Then you can follow this step to do a sanbox test in Amazon Mechanical Turk.
 
-1. Click on "MTurk" in the navigation pane. Create a new HIT type in the "New HIT Type" form:
-![screenshot](img/createHIT.png)
+1. **Create HIT Type**
 
+    Click on "MTurk" in the navigation pane. Create a new HIT type in the "New HIT Type" form:
+    ![screenshot](img/createHIT.png)
+    **Note**: Don't select any qualifications right now, because we're just testing on the sandbox.(Plus, most qualifications have different ids on sandbox than production, so it wouldn't work properly anyway.)
+    
     When you're done, click "Create". On the following screen, you should see a button that says "Register." Click that to register your new HIT type with Mechanical Turk.
 
-2. Click on "HITs" in the navigation pane, select the HIT type you just created in the "Create New HIT" form:
-![screenshot](img/new_hit.png)
+2. **Create HITs**
+
+    Click on "HITs" in the navigation pane, select the HIT type you just created in the "Create New HIT" form:
+    ![screenshot](img/new_hit.png)
 
     When you're done, click "Create".
 
-3. Now go to the [requester sandbox](https://requestersandbox.mturk.com/) to check that your HIT was posted successfully.
-Click on "Manage" in the blue toolbar, and then click on "Manage HITs individually" in the top right. You should see your HIT:
-![screenshot](img/sandbox_hit.png)
+3. **View As Requester**
 
-4. To test this as a sandbox worker, go to the [worker sandbox](https://workersandbox.mturk.com/mturk/) *in a different browser or Chrome incognito tab*. 
-Find the HIT you just posted, click "View a HIT in this group". If all went well, your app will be loaded into an iFrame at the default route `'/'`, 
-which shows the "home" template and prompts you to accept the HIT:
-![screenshot](img/accept_hit.png)
+    Now go to the Amazon MTurk [requester sandbox](https://requestersandbox.mturk.com/) to check that your HIT was posted successfully.
+    Click on "Manage" in the blue toolbar, and then click on "Manage HITs individually" in the top right. You should see your HIT:
+    ![screenshot](img/sandbox_hit.png)
+
+4. **View As Worker**
+
+    To test this as a sandbox worker, go to the [worker sandbox](https://workersandbox.mturk.com/mturk/) *in a different browser or Chrome incognito tab*. 
+    Find the HIT you just posted, click "View a HIT in this group". If all went well, your app will be loaded into an iFrame at the default route `'/'`, 
+    which shows the "home" template and prompts you to accept the HIT:
+    ![screenshot](img/accept_hit.png)
 
     Click the "Accept HIT" button. You should now be put into an experiment, which shows the content under `'/experiment'` route in your app. 
     
-5. As the admin, the next thing you should do is check on the Mechanical Turk status of this assignment -- is it "submitted" and/or "approved"? 
+5. **View As Admin**
+   
+    As the admin, the next thing you should do is check on the Mechanical Turk status of this assignment -- is it "submitted" and/or "approved"? 
 
     Click the "Refresh Assignment States" button in the "Maintenance" well at the top of the page:
     ![screenshot](img/maintenance.png)
@@ -371,7 +386,9 @@ which shows the "home" template and prompts you to accept the HIT:
     
     This means that Mechanical Turk knows that this assignment has been completed, but it has not yet been approved. We set the "Auto Approval Delay in Seconds" property of our HIT Type to a whole week, so we need to manually approve this assignment if we want it approved before then. Click the "Approve All Assignments" button in the "Maintenance" well to do this. You'll see a popup that asks you to confirm -- feel free to leave the message blank, and hit "Ok." The **Status** field of the assignment should now change from "Submitted" to "Approved."
 
-6. Now that the assignment is approved, we can pay the worker's bonus. 
+6. **Complete**
+    
+    Now that the assignment is approved, we can pay the worker's bonus. 
 
     Click the "Pay All Bonuses" button in the "Maintenance" well. You'll again see a popup that asks you to confirm -- you do need to enter a message here, which will included in the email that Mechanical Turk sends to the worker to notify him of the bonus. When you click okay, you'll see that the **Bonus** field of the assignment now has a "Paid" label next to it:
     ![screenshot](img/paid.png)
@@ -387,11 +404,17 @@ which shows the "home" template and prompts you to accept the HIT:
 
 ## ***Read to launch***
 
-**Congratulations!** Now, you can you made it! You can modify the demo, turn off sandbox in setting and launch your own experiments in Amazon Mturk!
+**Congratulations**, you made it! 
+
+Now you can modify the demo, turn off sandbox in settings and launch your own experiments in the real world.
+
+Enjoy your new research experience that powered by the VirtualLab!
 
 ## ***Reference***
 
-Turkserver v0.5.0 API Reference:  See [Turkserver.meteorapp.com](https://turkserver.meteorapp.com/)
+Turkserver v0.5.0 API Reference:  See [here](https://turkserver.meteorapp.com/)
 
-If you have any question: Please contact the developer [here](https://kgao.github.io/#contact)
+Amazon Mechanical Turk API: See [here](http://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/Welcome.html)
+
+If you have any question: please contact the developer [here](https://kgao.github.io/#contact)
 </p></div><p>
