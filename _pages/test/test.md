@@ -5,7 +5,7 @@ date: '2015-05-05'
 title: Test
 slug: test
 permalink: test
-published: false
+published: true
 icon: fa fa-info-circle
 category: navigation
 order: 0

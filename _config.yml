@@ -2,6 +2,8 @@
 title: VirtualLab
 baseurl: 
 host:
+
 # Build settings
-markdown: redcarpet
+# 'github-pages' gem should automatically pull in the right markdown processor
+# markdown: kramdown
 include: ["_pages"]
