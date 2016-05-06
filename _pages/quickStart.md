@@ -222,7 +222,7 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
 
 ### **Deploy to Azure App Service**
 
-1. Build App Srvice using Azure Portal
+1. Build App Service using Azure Portal
     ![screenshot](img/create-web-app-service.png)
     Or try it [here](https://tryappservice.azure.com/).
     (Note: Please don't forget to set your `deployment credentials`.)
