@@ -31,7 +31,6 @@ img {
 }
 
 header {
-    
     padding: 10px;
     top: 0;
     width: 100%;
@@ -46,11 +45,16 @@ header {
 .site-header{
     min-height: 86px;
 }
+header .wrapper{
+   max-width: 1050px;
+}
 header .site-title, .site-title:visited{
+    max-width: 100%;
     font-size:30px;
     color: white;
     margin-left: -20px;
     line-height: 77px;
+    float:left;
 }
 header .site-title:hover{
     opacity:0.65;
