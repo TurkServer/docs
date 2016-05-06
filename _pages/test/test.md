@@ -8,7 +8,7 @@ permalink: test
 published: false
 icon: fa fa-info-circle
 category: navigation
-order: 10
+order: 0
 
 ---
 # <i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp; Test Publish and Top Navigation
