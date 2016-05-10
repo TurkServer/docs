@@ -414,7 +414,6 @@ Enjoy your new research experience that powered by the VirtualLab!
 
 Turkserver v0.5.0 API Reference:  See [here](https://turkserver.meteorapp.com/)
 
-Amazon Mechanical Turk API: See [here](http://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/Welcome.html)
-
 If you have any question: please contact the developer [here](https://kgao.github.io/#contact)
+
 </p></div><p>
