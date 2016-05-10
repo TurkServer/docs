@@ -58,6 +58,11 @@
   min-width: 20px;
 }
 
+#arrow .arrow-steps .step:hover {
+  cursor: pointer;
+  cursor: hand;
+}
+
 #arrow .arrow-steps .step:after,
 #arrow .arrow-steps .step:before {
 	content: " ";

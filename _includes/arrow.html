@@ -80,6 +80,25 @@
               }
           });
       });
+      
+      
+      //Enable click step response directly
+      jQuery.each(steps, function(i) {
+        jQuery(steps[i]).bind("click", function() {
+           jQuery.each(steps, function(j) {
+             if(j<i){ //previous
+               jQuery(steps[j]).removeClass('current').addClass('done');
+               jQuery(blocks[j]).removeClass('current').addClass('done');
+             }else if(j==i){ //current show
+               jQuery(steps[j]).removeClass('done').addClass('current');
+               jQuery(blocks[j]).removeClass('done').addClass('current');
+             }else{ //(j>i) //next
+               jQuery(steps[j]).removeClass('done').removeClass('current');
+               jQuery(blocks[j]).removeClass('done').removeClass('current');
+             }
+           });
+        });
+      });
   })
   </script>
 
