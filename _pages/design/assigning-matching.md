@@ -4,7 +4,7 @@ title: Assignment and Matching
 slug: assignment-matching
 permalink: assignment-matching
 published: true
-icon:
+icon: fa fa-random
 category: design
 order: 2
 ---

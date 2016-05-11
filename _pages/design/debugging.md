@@ -6,5 +6,5 @@ permalink: debugging-testing
 published: true
 icon: fa fa-bug
 category: design
-order: 7
+order: 9
 ---

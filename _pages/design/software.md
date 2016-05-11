@@ -4,9 +4,9 @@ title: Helpful Software
 slug: helpful-software
 permalink: helpful-software
 published: true
-icon:
+icon: fa fa-info
 category: design
-order: 10
+order: 15
 ---
 
 Meteor already makes it pretty easy to design a reactive and responsive user interface, but you may find some of the following packages useful.

@@ -6,5 +6,5 @@ permalink: attrition
 published: true
 icon: 
 category: design
-order: 6
+order: 12
 ---

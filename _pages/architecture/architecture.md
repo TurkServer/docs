@@ -6,9 +6,12 @@ title: System Architecture
 slug: architecture
 permalink: architecture
 published: true
-icon: fa fa-cog fa-fw
+icon: fa fa-cog fa-spin
 category: navigation
 order: 3
 ---
 
 # Architecture Info here
+
+<img src="img/arch/stack.png" width="50%">
+

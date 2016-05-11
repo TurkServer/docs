@@ -3,9 +3,9 @@ layout: default
 title: Batches and Treatments
 slug: batches-treatments
 permalink: batches-treatments
-icon:   
+icon: fa fa-tag   
 category: architecture
-order: 2
+order: 5
 ---
 
 # Batches and Treatments

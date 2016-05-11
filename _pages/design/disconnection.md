@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Disconnection and Attrition
+title: Disconnection and Dropout
 slug: disconnection
 permalink: disconnection
 published: true

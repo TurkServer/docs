@@ -34,3 +34,5 @@ comprehensive tutorial.
 
 ### Going Live
 
+Best crowdsourcing practices: 
+http://wiki.wearedynamo.org/index.php/Guidelines_for_Academic_Requesters
