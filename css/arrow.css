@@ -134,6 +134,7 @@
     border-style: solid;
     /* no svg fallback */
     font-size: 20px;
+    z-index: 1;
 }
 
 #arrow .next {
@@ -147,6 +148,7 @@
     border-style: solid;
     /* no svg fallback */
     font-size: 20px;
+    z-index: 1;
 }
 
 /* Enable rotation - vertical arrow */

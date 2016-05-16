@@ -22,9 +22,7 @@ For more information, regarding how to build this app, see [here](/tutorial.html
 {% include arrow.html %}
 
 
-
 <div markdown="1" class="block current">
-
 ## ***Background***
 
 [TurkServer](https://github.com/HarvardEconCS/turkserver-meteor) is a framework based on the JavaScript app platform [Meteor](https://www.meteor.com/) that makes it easy to build interactive web-based user experiments for deployment on [Amazon Mechanical Turk](https://www.mturk.com/mturk/welcome).
@@ -119,7 +117,7 @@ So let's start the journey now! (Click the "Next" button on the right)
         
     Meteor supports OS X, Windows, and Linux, and is simple to install. 
 
-    ```html
+   ```html
     | OS      | Version             | Status | 
     |---------|---------------------|--------|
     | Windows | 10                  |    ✔   |
@@ -130,7 +128,7 @@ So let's start the journey now! (Click the "Next" button on the right)
     |  Linux  | X86                 |    ✔   | 
     |  Linux  | x86_64              |    ✔   | 
     |   OSX   | 10.7(Lion) and above|    ✔   | 
-    ```
+   ```
 
     On Windows?
 
@@ -147,11 +145,13 @@ So let's start the journey now! (Click the "Next" button on the right)
 
 
 1.  **Checkout the project** 
+    
     > `git clone https://github.com/VirtualLab/tutorial.git`
 
 2.  **Add TurkServer package**
     
     Under the root of your project, add the turkserver meteor package:
+    
     > `cd tutorial`
     
     > `git clone https://github.com/HarvardEconCS/turkserver-meteor.git packages/turkserver` (Please note: Using GitHub has the install source is temporary until it's published as a Meteor package)
@@ -190,6 +190,7 @@ So let's start the journey now! (Click the "Next" button on the right)
     ```    
        
 4.  **Run your app**
+    
     > `meteor --settings settings.json`
 
     In your console, you should see:
@@ -235,6 +236,7 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
 2. **Configure App Service**
 
     Add the following enironment variables in your Application Settings:
+    
     - WEBSITE _ NODE _ DEFAULT _ VERSION : `0.10.40`
     - ROOT _ URL : `http://{sitename}.azurewebsites.net` or your custom domain if you've set that up
     - MONGO _ URL : (Mongo DB connection string from a MongoDB hosted on [MongoLab](https://mlab.com/) or a VM)
@@ -252,7 +254,8 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
     For **Windows** users, you can use [Azure-demeteorizer](https://github.com/christopheranderson/azure-demeteorizer).
     Make sure you install and meet all the [prerequisites](https://github.com/christopheranderson/azure-demeteorizer#prerequisites) first, (Note: Visual Studio 2013 would be the most comaptible choice for most users.)
     then Azure-demeteorizer can do all the magic for you:
-    > 1. Install azure-demeteorizer globally using npm:`npm install -g christopheranderson/azure-demeteorizer`
+    
+    > 1. `npm install -g christopheranderson/azure-demeteorizer` to install azure-demeteorizer globally via npm:
     > 2. `cd tutorial`
     > 3. `azure-demeteorizer build`
     > 4. `azure-demeteorizer install`
@@ -266,7 +269,8 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
      
     For **Linux/Mac OSX** users, you can use [Demeteorizer](https://github.com/OnModulus/demeteorizer), however,
     you have to demeteorize first, and do a continuous deployment with Git, TFS, GitHub, or Visual Studio Team Services (Here use Git as example):
-    > 1. Install Demeteorizer globally using npm`$ npm install -g demeteorizer`
+    
+    > 1. `$ npm install -g demeteorizer` to install Demeteorizer globally via npm
     > 2. `$ cd tutorial`
     > 3. `$ demeteorizer`
     > 4. `$ cd .demeteorized/bundle/programs/server`
@@ -293,7 +297,7 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
     
     > If you build Linux VMs, (i.e. Ubuntu 14.04 LTS) you can use [Mupx](https://github.com/arunoda/meteor-up/tree/mupx), please continue the following steps:
     
-    > 1. Install mupx globally using npm: `npm install -g mupx`
+    > 1. `npm install -g mupx` to install mupx globally via npm
     > 2. `cd tutorial`
     > 3. `mupx init` to generate or manually add:   
          * mup.json - Meteor Up configuration file, see exmpale [here](https://github.com/arunoda/meteor-up/tree/mupx#example-file)
@@ -304,6 +308,7 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
 
 ### **Deployment Choices**
     
+
 ```html
 | Client OS | Server OS             | Solutions(Recommended) | Status | 
 |-----------|-----------------------|------------------------|--------|
@@ -313,7 +318,7 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
 | Linux     | Linux                 | Mupx                   |    ✔   |
 ```
 
-*For other deployments on Modulus, DigitalOcean, Galaxy, please check the official deployment book [here](http://meteortips.com/deployment-tutorial/).
+***Note**: For other deployments on Modulus, DigitalOcean, Galaxy, please check the official deployment book [here](http://meteortips.com/deployment-tutorial/).
 
 </div>
 
