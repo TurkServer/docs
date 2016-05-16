@@ -1,7 +1,6 @@
 ---
 layout: default
 author: kgao
-date: '2015-05-05'
 title: Launching Experiments
 slug: launching
 permalink: launching

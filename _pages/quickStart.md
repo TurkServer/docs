@@ -1,7 +1,6 @@
 ---
 layout: default
 author: Kevin Gao
-date: '2015-05-05'
 title: Quick Start
 slug: quick-start
 permalink: quickstart
