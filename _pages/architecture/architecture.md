@@ -2,9 +2,9 @@
 layout: default
 author: 
 date: '2015-05-05'
-title: System Architecture
-slug: architecture
-permalink: architecture
+title: System Overview
+slug: overview
+permalink: overview
 published: true
 icon: fa fa-cog fa-spin
 category: navigation

@@ -15,7 +15,7 @@ order: 0
 
 Since the 1950s, social scientists of all disciplines have been studying 
 people in "behavioral labs" at universities. These labs typically involve 
-cramming a group of people into a room for an hour orS so and asking them to 
+cramming a group of people into a room for an hour or so and asking them to 
 do something:    
     
 ![old labs](img/intro/old-lab.png)
@@ -54,9 +54,12 @@ provides a system on which to build web-based behavioral experiments.
 Importantly, the system allows for:
 
 - **Easier real-time programming** using the [Meteor][2] web app framework
-- Building synchronous experiments and studying **group interaction**
-- A live web-based **experimenter console** showing all connected participants
-- The ability to create **one-way mirrors** to view behavior in real time     
+- Building synchronous experiments and studying [**group interaction**]
+(assigning-matching)
+- A live web-based [**experimenter console**](admin-console) showing all 
+connected participants
+- The ability to create [**one-way mirrors**](mirror) to view behavior
+ in real time     
                 
 [2]: https://www.meteor.com/           
 [3]: https://github.com/VirtualLab/turkserver-meteor 

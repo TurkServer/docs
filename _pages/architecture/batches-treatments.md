@@ -4,7 +4,7 @@ title: Batches and Treatments
 slug: batches-treatments
 permalink: batches-treatments
 icon: fa fa-tag   
-category: architecture
+category: overview
 order: 5
 ---
 

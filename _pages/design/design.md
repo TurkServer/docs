@@ -2,7 +2,7 @@
 layout: default
 author:
 date: '2015-05-05'
-title: Designing Experiments
+title: Design Guide
 slug: design
 permalink: design
 published: true
@@ -21,6 +21,8 @@ leave happy.
 When doing multi-Turker (i.e. 2 or more users) experiments using Meteor, there
 are a number of important considerations that need to be factor into
 experimental design and when HITs are launched live.
+
+![example flow](img/design/experiment-flow.png)   
 
 The lab at [Microsoft Research
 NYC](http://research.microsoft.com/en-us/labs/newyork/) aims to pioneer the

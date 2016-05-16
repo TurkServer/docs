@@ -2,11 +2,11 @@
 layout: default
 author: kgao
 date: '2015-05-05'
-title: Management
-slug: management
-permalink: management
+title: Launching Experiments
+slug: launching
+permalink: launching
 published: true
-icon: fa fa-bar-chart
+icon: fa fa-users
 category: navigation
 order: 5
 ---
@@ -15,7 +15,9 @@ order: 5
 
 - When you finally launch your meteor experiment rejoice for you have earned a long-rest and a vacation on the beach
 - Actually don't because things aren't as "automatic" as they may seem
-- You still need to [manage your active experiment](/experimentManagement.html) to deal with users in real time
+- You still need to [manage your active experiment](active-management) to 
+deal with 
+users in real time
 - As of this writing (9/24/15) it seems far more advantageous to launch many "small" HITs instead of several large ones
 - Why? Turkers will **not** sit around your lobby waiting to getting matched for very long
 - You will likely get angry emails and because they have to return your HIT in order to leave (or simply disconnect) it will be non-trivial/impossible to compensate them for their time (see Matching issues above for some strategies to avoid this) 

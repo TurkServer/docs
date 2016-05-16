@@ -5,7 +5,7 @@ slug: alternatives
 permalink: alternatives
 published: true
 icon: fa fa-share-alt
-category: architecture
+category: overview
 order: 10
 ---
 

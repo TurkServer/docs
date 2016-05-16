@@ -1,5 +1,5 @@
 # Site settings
-title: VirtualLab
+title: The Virtual Lab
 baseurl: 
 host:
 
@@ -13,3 +13,6 @@ kramdown:
   input: GFM 
 
 include: ["_pages"]
+
+kramdown:
+  input: GFM

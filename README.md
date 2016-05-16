@@ -1,10 +1,14 @@
-# Tutorial website and guide for the virtual lab
+# Guide to Virtual Lab Experiments
 
-See a live version at https://virtuallab.github.io/
+This is source code. See the live version at https://virtuallab.github.io/ .
 
-If you have any questions about building or running virtual lab experiments, please post an [issue][1]. This will help us improve documentation and general information for prospective future experimenters :) .
+If you have any questions about building or running virtual lab experiments,
+please post an [issue][1]. This will help us improve documentation and general
+information for prospective future experimenters. Better yet, suggest edits 
+and send a [pull request][pr] (see below).
 
 [1]: https://github.com/VirtualLab/virtuallab.github.io/issues
+[pr]: https://github.com/VirtualLab/virtuallab.github.io/pulls 
 
 # Getting Started
 
@@ -35,23 +39,20 @@ Start Jekyll, which creates a development server that will update as you make
  edits:
  
 ```
-bundle exec jekyll serve
-
+bundle exec jekyll serve --watch
 ```
 
-Once you're done, send a [pull request][5] with your changes!
-
-[5]: https://github.com/VirtualLab/virtuallab.github.io/pulls
-
+Once you're done, send a [pull request][pr] with your changes!
 
 # Contribution Guidelines
-
  
-## Editing
+## Editing files locally
 
-1. Local files (using markdown:redcarpet) path: `_pages/{top-navigation-folder}/{your-page}`
+1. All files are stored in `_pages/{top-navigation-folder}/{your-page}`.
 
-2. In each file, following the Metadata setting:
+2. The following metadata, at the top of each file, controls title, path, 
+organization, and so on.
+
 ```
 ---
 layout: default    // choose page rendering template under `_layouts/`  [required]
@@ -65,20 +66,20 @@ icon: fa fa-flask    // font awesome icon class string  [optional]
 category: navigation    // choose the parent category, use parent's slug  [required]
 order: 2    // order in current category  [required]
 ---
-
 ```
 
+## Testing partial content 
 
-## Test 
+The `published` key controls what pages display on the site. You can use this
+ to push partial changes that you don't want to show up online. 
 
-1. Put all your test md under `_pages/test/`
+- Set `published: true` for local testing.
+- Set `published: false` when committing.
 
-2. Set `published:true` when test locally.
+The `_pages/test/` folder is an entire directory of content that you can play
+ around with. You can also store uncategorized content that is not ready here. 
 
-3. Set `published:false` when commit.
+## Sharing your information
 
-
-## Share
-
-Please make sure always create a *Pull Request* for your changes.
-So that our core team can help review and approve.
+Please make sure always create a [pull request][pr] for your changes, so that
+ we can take a look and add them to the site!

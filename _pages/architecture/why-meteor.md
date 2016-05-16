@@ -4,7 +4,7 @@ title: Why Meteor?
 slug: why-meteor
 permalink: why-meteor
 icon: fa fa-question   
-category: architecture
+category: overview
 order: 0
 ---
 

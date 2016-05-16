@@ -2,39 +2,16 @@
 layout: default
 author: kgao
 date: '2015-05-05'
-title: Experiment Management
-slug: experiment-management
-permalink: experimentManagement
+title: Managing an Active Experiment
+slug: active-management
+permalink: active-management
 published: true
 icon:
-category: management
-order: 1
+category: launching
+order: 5
 ---
 
 # Managing an Active Experiment
-
-### Before you launch: 
-
-**Email forwarding setup:**  
-
-* Make sure that email forwarding on the account used to make the HIT (more than likely lab dartmouth email) because Turkers *will* contact you during a HIT if something goes wrong
-* It's a good idea to have an email signature to appear more professional  
-
-**Auto Assignment approval setup:**
-
-* Make sure that you have some reasonable timer Assignment auto-approval (e.g. 1hr - 24hrs is probably reasonable)
-* This is important in case you need to wipe a database or debug an issue and no longer have access to completed assignments in Turkserver
-
-**HIT expiration setup (called Lifetime in VirtualLab):**
-
-- Make sure that you have a reasonable timer for when a HIT expires (this entirely depends on the nature of your study), i.e. how long it's visible for workers to be able to accept it
-- Simple things might be just 24hrs or less (it's probably a good idea to run small batches at different times rather than a large batch all at once for multi-turker matching purposes and to more uniformly sample the Turker pool)
-- This is also important in case you run into issues as noted above 
-
-**Assignment duration**
-
-* Make sure to set this to something a little more than the length of your study
-* This way if there are problems the a Turker's assignment will automatically end when this time is reached
 
 ### While you're live:
 

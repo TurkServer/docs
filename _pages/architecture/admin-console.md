@@ -4,6 +4,6 @@ title: Live Experimenter View
 slug: admin-console
 permalink: admin-console
 icon: fa fa-server   
-category: architecture
+category: overview
 order: 2
 ---

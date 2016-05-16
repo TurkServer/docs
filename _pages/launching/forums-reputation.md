@@ -5,8 +5,8 @@ slug: forums-reputation
 permalink: forums-reputation
 published: true
 icon:
-category: management
-order: 2
+category: launching
+order: 1
 ---
 
 - Active worker forums
