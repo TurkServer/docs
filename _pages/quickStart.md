@@ -22,7 +22,9 @@ For more information, regarding how to build this app, see [here](/tutorial.html
 {% include arrow.html %}
 
 
-</p><div markdown="1" class="block current"><p>
+
+<div markdown="1" class="block current">
+
 ## ***Background***
 
 [TurkServer](https://github.com/HarvardEconCS/turkserver-meteor) is a framework based on the JavaScript app platform [Meteor](https://www.meteor.com/) that makes it easy to build interactive web-based user experiments for deployment on [Amazon Mechanical Turk](https://www.mturk.com/mturk/welcome).
@@ -96,10 +98,10 @@ with one of our basic example projects - [Tutorial](https://github.com/VirtualLa
 So let's start the journey now! (Click the "Next" button on the right)
    
 
-</p></div><p>
+</div>
   
   
-</p><div markdown="1" class="block"><p>
+<div markdown="1" class="block">
 ## ***Install***
 1. **Git**
 
@@ -138,9 +140,9 @@ So let's start the journey now! (Click the "Next" button on the right)
 
     `curl https://install.meteor.com/ | sh`  
     
-</p></div><p>
+</div>
 
-</p><div markdown="1" class="block"><p>
+<div markdown="1" class="block">
 ## ***Getting Started***
 
 
@@ -199,9 +201,9 @@ So let's start the journey now! (Click the "Next" button on the right)
     Navigate to via http://localhost:3000/turkserver, login with your password, enter the admin dashboard:
     ![screenshot](img/turkserver.png)
     
-</p></div><p>
+</div>
 
-</p><div markdown="1" class="block"><p>
+<div markdown="1" class="block">
 ## ***Deployment***
 
 To deploy your meteor app in cloud, there are many choices.
@@ -313,9 +315,9 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
 
 *For other deployments on Modulus, DigitalOcean, Galaxy, please check the official deployment book [here](http://meteortips.com/deployment-tutorial/).
 
-</p></div><p>
+</div>
 
-</p><div markdown="1" class="block"><p>
+<div markdown="1" class="block">
 ## ***Test***
 
 This step is showing you how to do your sandbox test in Amazon Mechanical Turk, 
@@ -398,9 +400,9 @@ Then you can follow this step to do a sanbox test in Amazon Mechanical Turk.
     **Congratulations!** -- You have successfully posted a HIT, completed it, and paid yourself for doing so.
 
 
-</p></div><p>
+</div>
 
-</p><div markdown="1" class="block"><p>
+<div markdown="1" class="block">
 
 ## ***Read to launch***
 
@@ -416,4 +418,4 @@ Turkserver v0.5.0 API Reference:  See [here](https://turkserver.meteorapp.com/)
 
 If you have any question: please contact the developer [here](https://kgao.github.io/#contact)
 
-</p></div><p>
+</div>

@@ -5,5 +5,5 @@ host:
 
 # Build settings
 # 'github-pages' gem should automatically pull in the right markdown processor
-markdown: redcarpet
+markdown: kramdown
 include: ["_pages"]
