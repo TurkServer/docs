@@ -1,7 +1,6 @@
 ---
 layout: default
 author: Andrew Mao
-date: '2015-05-05'
 title: Welcome to The Virtual Lab
 slug: intro
 permalink: index

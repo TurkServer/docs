@@ -1,7 +1,6 @@
 ---
 layout: default
 author: Kevin Gao
-date: '2015-05-05'
 title: Test Sub Nav 3
 slug: testsubnav3
 permalink: test-sub-nav3

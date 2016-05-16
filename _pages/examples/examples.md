@@ -1,7 +1,6 @@
 ---
 layout: default
 author: 
-date: '2015-05-05'
 title: Examples
 slug: examples
 permalink: examples

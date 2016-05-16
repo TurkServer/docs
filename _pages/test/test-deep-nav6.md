@@ -1,7 +1,6 @@
 ---
 layout: default
 author: Kevin Gao
-date: '2015-05-05'
 title: Test Deep Nav 6
 slug: testdeepnav6
 permalink: test-deep-nav6

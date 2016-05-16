@@ -1,7 +1,6 @@
 ---
 layout: default
 author: Lili Dworkin
-date: '2015-05-05'
 title: Basic Tutorial
 slug: tutorial
 permalink: tutorial

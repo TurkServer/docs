@@ -1,7 +1,6 @@
 ---
 layout: default
 author: kgao
-date: '2015-05-05'
 title: Managing an Active Experiment
 slug: active-management
 permalink: active-management
