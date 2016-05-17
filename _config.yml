@@ -10,9 +10,7 @@ host:
 markdown: kramdown
 # Turn on recognition of GitHub Flavored Markdown 
 kramdown:
-  input: GFM 
+  input: GFM
+  hard_wrap: false
 
 include: ["_pages"]
-
-kramdown:
-  input: GFM
