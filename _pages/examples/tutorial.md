@@ -71,7 +71,7 @@ For a more detailed explanation of this code and  a better understanding how rou
 
 Now we are ready to add the TurkServer package:
 
-1. `git clone --recursive https://github.com/HarvardEconCS/turkserver-meteor.git packages/mizzao:turkserver`
+1. `git clone https://github.com/VirtualLab/turkserver-meteor.git packages/turkserver`
 2. `meteor add mizzao:turkserver`
 
 Next create a settings.json file, which needs to contain a password
