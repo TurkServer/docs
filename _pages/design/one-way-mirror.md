@@ -149,8 +149,8 @@ observation over a number of different collections, producing the
 - [server code][cm-server]
 
 [cm-paper]: http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0153048 
-[cm-client]: https://github.com/VirtualLab/CrowdMapper/blob/master/client/admin.coffee
-[cm-server]: https://github.com/VirtualLab/CrowdMapper/blob/master/server/server.coffee#L38
+[cm-client]: https://github.com/TurkServer/CrowdMapper/blob/master/client/admin.coffee
+[cm-server]: https://github.com/TurkServer/CrowdMapper/blob/master/server/server.coffee#L38
 
 ## Prisoner's Dilemma
 
@@ -164,5 +164,5 @@ participants can see—including precise timing information.
 - [server code][pd-server]
 
 [d3]: https://d3js.org/ 
-[pd-client]: https://github.com/VirtualLab/long-run-cooperation/blob/master/client/admin/exp_admin.js
-[pd-server]: https://github.com/VirtualLab/long-run-cooperation/blob/master/server/admin.js
+[pd-client]: https://github.com/TurkServer/long-run-cooperation/blob/master/client/admin/exp_admin.js
+[pd-server]: https://github.com/TurkServer/long-run-cooperation/blob/master/server/admin.js

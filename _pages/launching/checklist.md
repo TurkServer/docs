@@ -39,7 +39,7 @@ session is all done
 * Make sure that you have some reasonable timer Assignment auto-approval (e.g. 1hr - 24hrs is probably reasonable)
 * This is important in case you need to wipe a database or debug an issue and no longer have access to completed assignments in Turkserver
 
-**HIT expiration setup (called Lifetime in VirtualLab):**
+**HIT expiration setup (called Lifetime in TurkServer):**
 
 - Make sure that you have a reasonable timer for when a HIT expires (this entirely depends on the nature of your study), i.e. how long it's visible for workers to be able to accept it
 - Simple things might be just 24hrs or less (it's probably a good idea to run small batches at different times rather than a large batch all at once for multi-turker matching purposes and to more uniformly sample the Turker pool)

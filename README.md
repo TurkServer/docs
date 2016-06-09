@@ -1,14 +1,14 @@
-# Guide to Virtual Lab Experiments
+# Guide to Running Online Experiments using TurkServer
 
-This is source code. See the live version at https://virtuallab.github.io/ .
+This is source code. See the live version at https://turkserver.github.io/ .
 
-If you have any questions about building or running virtual lab experiments,
-please post an [issue][1]. This will help us improve documentation and general
+If you have any questions about building or running online experiments,
+please post an [issue][is]. This will help us improve documentation and general
 information for prospective future experimenters. Better yet, suggest edits 
 and send a [pull request][pr] (see below).
 
-[1]: https://github.com/VirtualLab/virtuallab.github.io/issues
-[pr]: https://github.com/VirtualLab/virtuallab.github.io/pulls 
+[is]: https://github.com/TurkServer/turkserver.github.io/issues
+[pr]: https://github.com/TurkServer/turkserver.github.io/pulls 
 
 # Getting Started
 
@@ -30,8 +30,8 @@ gem install bundler
 Then, check out this repo and install the dependencies:
 
 ```
-git clone https://github.com/VirtualLab/virtuallab.github.io.git
-cd virtuallab.github.io
+git clone https://github.com/TurkServer/turkserver.github.io.git
+cd turkserver.github.io
 bundle install 
 ```
 

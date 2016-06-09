@@ -16,7 +16,7 @@ that you can deploy and that demonstrates many of the features of TurkServer.
  poking around [the code][1] directly and follow the [deployment 
  instructions](quickstart) to get it online.   
   
-[1]: https://github.com/VirtualLab/tutorial    
+[1]: https://github.com/TurkServer/tutorial    
 
 > Much of this fantastic tutorial is due to the excellent work of [Lili Dworkin](https://github.com/ldworkin).
 
@@ -71,7 +71,7 @@ For a more detailed explanation of this code and  a better understanding how rou
 
 Now we are ready to add the TurkServer package:
 
-1. `git clone https://github.com/VirtualLab/turkserver-meteor.git packages/turkserver`
+1. `git clone https://github.com/TurkServer/turkserver-meteor.git packages/turkserver`
 2. `meteor add mizzao:turkserver`
 
 Next create a settings.json file, which needs to contain a password

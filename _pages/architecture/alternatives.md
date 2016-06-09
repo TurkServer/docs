@@ -13,7 +13,7 @@ There are many other platforms released by academics for doing online
 experiments. Here's a list of all the ones we know of and a comparison with 
 what we've built.
 
-The main focus of virtual lab is to facilitate the study of real-time and
+The main focus of TurkServer is to facilitate the study of real-time and
 synchronous interaction. But it's not any more complicated than other 
 systems, and we use it even for single-user experiments.  
 

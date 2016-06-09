@@ -17,7 +17,7 @@ order: 5
 
 [1]: http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0153048 
 [2]: https://www.youtube.com/watch?v=cJbGNpmE7f0
-[3]: https://github.com/VirtualLab/CrowdMapper 
+[3]: https://github.com/TurkServer/CrowdMapper 
 
 In this project, we use a real-time Meteor app built on TurkServer to 
 experimentally study and analyze collaboration and coordination with 
@@ -33,11 +33,11 @@ respect to teams of varying size on a highly dynamic [crisis mapping][4] task.
 experiment, conducted daily over a *month*, collecting an order of magnitude
  more data than past studies.
   
-[5]: https://github.com/VirtualLab/long-run-cooperation   
+[5]: https://github.com/TurkServer/long-run-cooperation   
 
 ## Your paper here!
 
 Want more citations and your work on this page? Add your project here and send us
 a [pull request][pr]!
 
-[pr]: https://github.com/VirtualLab/virtuallab.github.io/pulls
+[pr]: https://github.com/TurkServer/turkserver.github.io/pulls

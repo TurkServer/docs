@@ -15,7 +15,7 @@ order: 1
 
 Version: 0.5.0
 
-Example project: [Tutorial](https://github.com/VirtualLab/tutorial). 
+Example project: [Tutorial](https://github.com/TurkServer/tutorial). 
 For more information, regarding how to build this app, see [here](/tutorial.html).
 
 {% include arrow.html %}
@@ -43,7 +43,7 @@ use custom APIs. This means that most of the outstanding Meteor
 documentation on the Internet will be useful, and that most of the
 required knowledge is not specific to TurkServer.
 
-All the code for the project that you will build during the tutorial can be found [here](https://github.com/VirtualLab/tutorial). If you have questions, comments, or suggestions, please add a Github issue to that repo.
+All the code for the project that you will build during the tutorial can be found [here](https://github.com/TurkServer/tutorial). If you have questions, comments, or suggestions, please add a Github issue to that repo.
 
 ## ***The Basics***
 
@@ -90,7 +90,7 @@ In using TurkServer, every Assignment of a HIT will go through one of three stat
   task. 
  
 Haven't build the app yet? Don't worry, we will get you started 
-with one of our basic example projects - [Tutorial](https://github.com/VirtualLab/tutorial).
+with one of our basic example projects - [Tutorial](https://github.com/TurkServer/tutorial).
 
 So let's start the journey now! (Click the "Next" button on the right)
    
@@ -145,7 +145,7 @@ So let's start the journey now! (Click the "Next" button on the right)
 
 1.  **Checkout the project** 
     
-    > `git clone https://github.com/VirtualLab/tutorial.git`
+    > `git clone https://github.com/TurkServer/tutorial.git`
 
 2.  **Add TurkServer package**
     
@@ -414,7 +414,7 @@ Then you can follow this step to do a sanbox test in Amazon Mechanical Turk.
 
 Now you can modify the demo, turn off sandbox in settings and launch your own experiments in the real world.
 
-Enjoy your new research experience that powered by the VirtualLab!
+Enjoy your new research experience using TurkServer!
 
 ## ***Reference***
 

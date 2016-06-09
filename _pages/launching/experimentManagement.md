@@ -48,7 +48,7 @@ order: 5
 
 **Approve assignments and Pay Bonuses (if any)**
 
-- Sometimes approving all assignments or paying all bonuses returns an error in the Turkserver admin interface. Nothing to worry about either way a few minutes and try again or first go to a specific user, refresh their status and then try again. If the error persists see this [solution](https://github.com/VirtualLab/turkserver-meteor/issues/56)
+- Sometimes approving all assignments or paying all bonuses returns an error in the Turkserver admin interface. Nothing to worry about either way a few minutes and try again or first go to a specific user, refresh their status and then try again. If the error persists see this [solution](https://github.com/TurkServer/turkserver-meteor/issues/56)
 - Try to be as prompt as possible as this helps the lab reptuation, speaking of which...
 
 **Check feedback on [Turkopticon](https://turkopticon.ucsd.edu/)**
