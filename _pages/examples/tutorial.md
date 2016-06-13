@@ -474,7 +474,7 @@ Finally, define the `incClicks` method in your server-side `Meteor.methods` bloc
 ```javascript
 Meteor.methods({
   incClicks: function() {
-    Clicks.update({}, {$inc: {clicks: 1}});
+    Clicks.update({}, {$inc: {count: 1}});
   },
 });
 ```
