@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Forums and Reputation
+title: Working with Workers
 slug: forums-reputation
 permalink: forums-reputation
 published: true
@@ -9,5 +9,14 @@ category: launching
 order: 1
 ---
 
+- Treat workers like people. They have a community, and talk to each other.
 - Active worker forums
-- TurkOpticon
+- Monitor your reputation on [TurkOpticon][to]. A good reputation means that 
+you will be able to recruit more workers and they will be more diligent.
+
+[to]: https://turkopticon.ucsd.edu 
+
+- http://www.wearedynamo.org/
+- [best practices][bp] 
+
+[bp]: http://wiki.wearedynamo.org/index.php/Guidelines_for_Academic_Requesters
