@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Helpful Software
-slug: helpful-software
-permalink: helpful-software
+slug: software
+permalink: software
 published: true
 icon: fa fa-info
 category: design

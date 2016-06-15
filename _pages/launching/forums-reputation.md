@@ -9,6 +9,10 @@ category: launching
 order: 1
 ---
 
+
+Best crowdsourcing practices: 
+http://wiki.wearedynamo.org/index.php/Guidelines_for_Academic_Requesters
+
 - Treat workers like people. They have a community, and talk to each other.
 - Active worker forums
 - Monitor your reputation on [TurkOpticon][to]. A good reputation means that 

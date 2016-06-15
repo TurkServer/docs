@@ -8,3 +8,7 @@ icon:
 category: design
 order: 12
 ---
+
+- Set expectations for involvement
+- Financial incentives
+- Soft incentives 
