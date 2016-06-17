@@ -1,4 +1,2 @@
-_site
-.bundle
-.sass-cache
-.jekyll-metadata
+.DS_Store
+_build_html/
