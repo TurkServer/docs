@@ -1,27 +1,10 @@
----
-layout: default
-author: Kevin Gao
-title: Quick Start
-slug: quick-start
-permalink: quickstart
-published: true
-icon: fa fa-rocket
-category: navigation
-order: 1
----
+# Quick Start
 
 > This quick start will guide you to step by step, from install and run a local instance to deploy and test your first Turkserver app in real world.  
-
-
-Version: 0.5.0
 
 Example project: [Tutorial](https://github.com/TurkServer/tutorial). 
 For more information, regarding how to build this app, see [here](/tutorial.html).
 
-{% include arrow.html %}
-
-
-<div markdown="1" class="block current">
 ## ***Background***
 
 [TurkServer](https://github.com/HarvardEconCS/turkserver-meteor) is a framework based on the JavaScript app platform [Meteor](https://www.meteor.com/) that makes it easy to build interactive web-based user experiments for deployment on [Amazon Mechanical Turk](https://www.mturk.com/mturk/welcome).
@@ -94,11 +77,6 @@ with one of our basic example projects - [Tutorial](https://github.com/TurkServe
 
 So let's start the journey now! (Click the "Next" button on the right)
    
-
-</div>
-  
-  
-<div markdown="1" class="block">
 ## ***Install***
 1. **Git**
 
@@ -137,11 +115,7 @@ So let's start the journey now! (Click the "Next" button on the right)
 
     `curl https://install.meteor.com/ | sh`  
     
-</div>
-
-<div markdown="1" class="block">
 ## ***Getting Started***
-
 
 1.  **Checkout the project** 
     
@@ -194,16 +168,13 @@ So let's start the journey now! (Click the "Next" button on the right)
 
     In your console, you should see:
     
-    ![screenshot](img/tutorial-console.png)
+    ![screenshot](../_static/tutorial-console.png)
     
     Open your browser, you should see:   
-    ![screenshot](img/tutorial-start.png)
+    ![screenshot](../_static/tutorial-start.png)
     Navigate to via http://localhost:3000/turkserver, login with your password, enter the admin dashboard:
-    ![screenshot](img/turkserver.png)
+    ![screenshot](../_static/turkserver.png)
     
-</div>
-
-<div markdown="1" class="block">
 ## ***Deployment***
 
 To deploy your meteor app in cloud, there are many choices.
@@ -221,14 +192,14 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
 
 - [Service Fabri](https://azure.microsoft.com/en-us/services/service-fabric/) (Less beginner-friendly, microservice-based application development)
     
-    ![screenshot](img/azure-cloud-3-services.png)
+    ![screenshot](../_static/azure-cloud-3-services.png)
 
     For more detailed comparison, see [here](https://azure.microsoft.com/en-us/documentation/articles/choose-web-site-cloud-service-vm/).
 
 ### **Deploy to Azure App Service**
 
 1. **Build App Service using Azure Portal**
-    ![screenshot](img/create-web-app-service.png)
+    ![screenshot](../_static/create-web-app-service.png)
     Or try it [here](https://tryappservice.azure.com/).
     (Note: Please don't forget to set your `deployment credentials`.)
 
@@ -240,7 +211,7 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
     - ROOT _ URL : `http://{sitename}.azurewebsites.net` or your custom domain if you've set that up
     - MONGO _ URL : (Mongo DB connection string from a MongoDB hosted on [MongoLab](https://mlab.com/) or a VM)
     - METEOR _ SETTINGS : JSON value equals to the entire contents of your `settings.json` file
-![screenshot](img/app-settings.png)
+![screenshot](../_static/app-settings.png)
 
 3. **Deploy**
 
@@ -287,7 +258,7 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
 ### **Deploy to Azure Virtual Machine**
 
 1. **Build VM by Azure Portal**
-    ![screenshot](img/create-vm.png)
+    ![screenshot](../_static/create-vm.png)
     Or try it [here](https://azure.microsoft.com/en-us/trial/free-trial-virtual-machines/).
     (Note: Please don't forget to set your deployment credentials.)
 2. **Deploy**
@@ -319,9 +290,6 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
 
 ***Note**: For other deployments on Modulus, DigitalOcean, Galaxy, please check the official deployment book [here](http://meteortips.com/deployment-tutorial/).
 
-</div>
-
-<div markdown="1" class="block">
 ## ***Test***
 
 This step is showing you how to do your sandbox test in Amazon Mechanical Turk, 
@@ -354,7 +322,7 @@ Then you can follow this step to do a sanbox test in Amazon Mechanical Turk.
 1. **Create HIT Type**
 
     Click on "MTurk" in the navigation pane. Create a new HIT type in the "New HIT Type" form:
-    ![screenshot](img/createHIT.png)
+    ![screenshot](../_static/createHIT.png)
     **Note**: Don't select any qualifications right now, because we're just testing on the sandbox.(Plus, most qualifications have different ids on sandbox than production, so it wouldn't work properly anyway.)
     
     When you're done, click "Create". On the following screen, you should see a button that says "Register." Click that to register your new HIT type with Mechanical Turk.
@@ -362,7 +330,7 @@ Then you can follow this step to do a sanbox test in Amazon Mechanical Turk.
 2. **Create HITs**
 
     Click on "HITs" in the navigation pane, select the HIT type you just created in the "Create New HIT" form:
-    ![screenshot](img/new_hit.png)
+    ![screenshot](../_static/new_hit.png)
 
     When you're done, click "Create".
 
@@ -370,14 +338,14 @@ Then you can follow this step to do a sanbox test in Amazon Mechanical Turk.
 
     Now go to the Amazon MTurk [requester sandbox](https://requestersandbox.mturk.com/) to check that your HIT was posted successfully.
     Click on "Manage" in the blue toolbar, and then click on "Manage HITs individually" in the top right. You should see your HIT:
-    ![screenshot](img/sandbox_hit.png)
+    ![screenshot](../_static/sandbox_hit.png)
 
 4. **View As Worker**
 
     To test this as a sandbox worker, go to the [worker sandbox](https://workersandbox.mturk.com/mturk/) *in a different browser or Chrome incognito tab*. 
     Find the HIT you just posted, click "View a HIT in this group". If all went well, your app will be loaded into an iFrame at the default route `'/'`, 
     which shows the "home" template and prompts you to accept the HIT:
-    ![screenshot](img/accept_hit.png)
+    ![screenshot](../_static/accept_hit.png)
 
     Click the "Accept HIT" button. You should now be put into an experiment, which shows the content under `'/experiment'` route in your app. 
     
@@ -386,9 +354,9 @@ Then you can follow this step to do a sanbox test in Amazon Mechanical Turk.
     As the admin, the next thing you should do is check on the Mechanical Turk status of this assignment -- is it "submitted" and/or "approved"? 
 
     Click the "Refresh Assignment States" button in the "Maintenance" well at the top of the page:
-    ![screenshot](img/maintenance.png)
+    ![screenshot](../_static/maintenance.png)
     The **Status** field of the assignment should now change from "Unknown" to "Submitted":
-    ![screenshot](img/submitted.png)
+    ![screenshot](../_static/submitted.png)
     
     This means that Mechanical Turk knows that this assignment has been completed, but it has not yet been approved. We set the "Auto Approval Delay in Seconds" property of our HIT Type to a whole week, so we need to manually approve this assignment if we want it approved before then. Click the "Approve All Assignments" button in the "Maintenance" well to do this. You'll see a popup that asks you to confirm -- feel free to leave the message blank, and hit "Ok." The **Status** field of the assignment should now change from "Submitted" to "Approved."
 
@@ -397,18 +365,14 @@ Then you can follow this step to do a sanbox test in Amazon Mechanical Turk.
     Now that the assignment is approved, we can pay the worker's bonus. 
 
     Click the "Pay All Bonuses" button in the "Maintenance" well. You'll again see a popup that asks you to confirm -- you do need to enter a message here, which will included in the email that Mechanical Turk sends to the worker to notify him of the bonus. When you click okay, you'll see that the **Bonus** field of the assignment now has a "Paid" label next to it:
-    ![screenshot](img/paid.png)
+    ![screenshot](../_static/paid.png)
 
     Assuming your worker sandbox account is tied to a real e-mail address, you should soon receive the corresponding notification e-mail. 
     
     **Congratulations!** -- You have successfully posted a HIT, completed it, and paid yourself for doing so.
 
 
-</div>
-
-<div markdown="1" class="block">
-
-## ***Read to launch***
+## ***Ready to launch***
 
 **Congratulations**, you made it! 
 
@@ -421,5 +385,3 @@ Enjoy your new research experience using TurkServer!
 Turkserver v0.5.0 API Reference:  See [here](https://turkserver.meteorapp.com/)
 
 If you have any question: please contact the developer [here](https://kgao.github.io/#contact)
-
-</div>

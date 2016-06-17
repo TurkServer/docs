@@ -1,13 +1,4 @@
----
-layout: default
-title: Pre-Launch Checklist
-slug: checklist
-permalink: checklist
-published: true
-icon: fa fa-check-square-o
-category: launching
-order: 4
----
+# Pre-Launch Checklist
 
 If you've done this before, you know that launching a live app to hundreds of
  people can be unnerving and stressful, because of the potential of things 
@@ -16,7 +7,7 @@ If you've done this before, you know that launching a live app to hundreds of
  this is by making a checklist—just like NASA does before space shuttle 
  launches.
 
-# Pre-launch Checklist
+## Example Checklist
 
 This is a checklist of common things we've done before running experiments. 
 You should copy it somewhere and augment it with things that are specific to 

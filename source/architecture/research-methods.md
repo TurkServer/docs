@@ -1,12 +1,4 @@
----
-layout: default
-title: Research Methods
-slug: research-methods
-permalink: research-methods
-icon:    
-category: overview
-order: 8
----
+# Research Methods
 
 The original design of TurkServer was described in the following paper. The 
 current version (based on Meteor) is not yet published, so please feel free 

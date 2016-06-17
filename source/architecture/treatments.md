@@ -1,13 +1,3 @@
----
-layout: default
-title: Treatments API
-slug: treatments
-permalink: treatments
-icon: fa fa-tag   
-category: overview
-order: 5
----
-
 # Treatments 
 
 Treatments can have structured data which are made

@@ -1,16 +1,4 @@
----
-layout: default
-author: kgao
-title: Managing an Active Experiment
-slug: active-management
-permalink: active-management
-published: true
-icon:
-category: launching
-order: 5
----
-
-# Managing an Active Experiment
+# Managing an Active Experiments
 
 ### While you're live:
 

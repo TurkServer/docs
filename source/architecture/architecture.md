@@ -1,15 +1,3 @@
----
-layout: default
-author: 
-title: System Overview
-slug: overview
-permalink: overview
-published: true
-icon: fa fa-cog fa-spin
-category: navigation
-order: 3
----
-
 # Architecture Overview
 
 TurkServer is a full-stack Javascript framework based on [Meteor][meteor]. 
@@ -18,7 +6,7 @@ This means you do all your programming in Javascript, on both the client-side
 
 [meteor]: https://www.meteor.com/
 
-<img src="img/arch/stack.png" width="40%">
+<img src="../_static/arch/stack.png" width="60%">
 
 Why is TurkServer designed this way, and what are the core concepts?
 

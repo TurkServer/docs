@@ -1,13 +1,4 @@
----
-layout: default
-title: Alternative Platforms
-slug: alternatives
-permalink: alternatives
-published: true
-icon: fa fa-share-alt
-category: overview
-order: 10
----
+# Alternative Platforms
 
 There are many other platforms released by academics for doing online 
 experiments. Here are a list of the ones we know that are currently active.
@@ -37,14 +28,6 @@ volunteer panel.
 
 [vs]: https://volunteerscience.com/
 
-<!--
-Other references, stuff that is not well supported
-[SoPHIE][sophie]
-[sophie]: http://www.sophie.uni-osnabrueck.de/
-
-http://cogsci.stackexchange.com/questions/109
--->
-
 Unless using volunteer participants, all of the aforementioned software 
 frameworks run on crowdsourcing platforms:
  
@@ -58,3 +41,11 @@ that may supplement or replace Mechanical Turk in the future.
 [mturk]: https://www.mturk.com/
 [prolific]: https://prolific.ac/
 [crowdsourcing]: https://www.quora.com/Are-there-any-similar-services-to-Amazon-Mechanical-Turk 
+
+<!--
+Other references, stuff that is not well supported
+[SoPHIE][sophie]
+[sophie]: http://www.sophie.uni-osnabrueck.de/
+
+http://cogsci.stackexchange.com/questions/109
+-->

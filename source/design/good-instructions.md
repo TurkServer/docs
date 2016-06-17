@@ -1,13 +1,4 @@
----
-layout: default
-title: Providing Good Instructions
-slug: good-instructions
-permalink: good-instructions
-published: true
-icon: fa fa-book
-category: design
-order: 3
----
+# Providing Good Instructions
 
 ### Social Issues:
 

@@ -1,13 +1,3 @@
----
-layout: default
-title: Live Experimenter View
-slug: admin-console
-permalink: admin-console
-icon: fa fa-server   
-category: overview
-order: 2
----
-
 # Live Experimenter View
 
 TurkServer has a built-in administration interface at `/turkserver`, providing a
@@ -15,7 +5,7 @@ real-time view of everything that is happening with your users and in your
 experiments. You can use this to manage batches, manage treatments, view the
 progress of experiments, and post HITs to recruit subjects.
 
-![admin console](img/turkserver.png)
+![admin console](../_static/turkserver.png)
 
 A brief overview of the different sections:
 

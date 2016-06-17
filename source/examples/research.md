@@ -1,13 +1,4 @@
----
-layout: default
-title: Research Projects
-slug: research
-permalink: research
-published: true
-icon: 
-category: examples
-order: 5
----
+# Research Projects
 
 ## Crisis Mapping 
 

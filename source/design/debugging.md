@@ -1,13 +1,4 @@
----
-layout: default
-title: Debugging and Testing
-slug: debugging
-permalink: debugging
-published: true
-icon: fa fa-bug
-category: design
-order: 9
----
+# Debugging and Testing
 
 Debug your app thoroughly in local mode before launching on MTurk.
 Grab some friends or use multiple browsers. Test things like dropouts, 

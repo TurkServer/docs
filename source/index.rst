@@ -33,7 +33,7 @@ The main documentation for the site is organized into a couple sections:
 
    architecture/architecture
    architecture/why-meteor
-   architecture/worlds-assignment
+   architecture/world-assignment
    architecture/admin-console
    architecture/treatments
    architecture/research-methods
@@ -57,11 +57,15 @@ The main documentation for the site is organized into a couple sections:
 .. _launching:
 
 .. toctree::
-   :maxdepth: 2   
-   
+   :maxdepth: 2
+
    launching/launching
+   launching/forums-reputation
    launching/pilot
-   
+   launching/coordinating-groups
+   launching/checklist
+   launching/experimentManagement
+   launching/post-experiment
 
 Indices and tables
 ==================

@@ -1,14 +1,6 @@
----
-layout: default
-author: Andrew Mao
-title: TurkServer
-slug: intro
-permalink: index
-published: true
-icon: fa fa-info-circle
-category: Introduction
-order: 0
----
+# Introduction
+
+## What is TurkServer?
 
 [TurkServer][ts] is a platform for building software-controlled, web-based
 behavioral experiments using participants from the Internet. We can now study
@@ -38,7 +30,7 @@ This means we can go from very artificial environments to studying realistic,
 
 [4]: http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0153048 
 
-# Sharing and Replication
+## Sharing and Replication
 
 One significant annoyance of doing experiments is that they're **a lot of 
 work**, yet **this work is often redundant**: it is either not shared or 
@@ -57,8 +49,8 @@ We can do this by making everything **open-source software**: not only is the
 In this way, building off someone else's experiment means you don't have to 
 implement it from scratch: just grab their code and use it!
 
-# Next Steps
+## Next Steps
 
-Ready to jump in? Check out the [quick start](quickstart), a basic 
+Ready to jump in? Check out the [quick start](quickstart.html), a basic 
 (but fully functional) [tutorial app](tutorial.html), or read up on how to 
 think about [designing software-based online experiments](designConsiderations.html).

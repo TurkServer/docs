@@ -1,13 +1,4 @@
----
-layout: default
-title: One-way Mirror
-slug: mirror
-permalink: mirror
-published: true
-icon: fa fa-photo
-category: design
-order: 8
----
+# One-way Mirror
 
 ![one-way mirror](http://www.todayifoundout.com/wp-content/uploads/2010/05/one-way-mirror.jpg)
 
@@ -15,7 +6,7 @@ A one-way mirror is used in some physical lab experiments to allow
 unobtrusive observation of participants. Using the real-time capabilities of 
 Meteor, this is actually fairly easy to set up on an existing app.  
 
-# Creating a digital one-way mirror
+## Creating a digital one-way mirror
 
 In the [worlds and assignment](world-assignment) section, we explained how
 TurkServer is designed around multiple worlds that participants can be assigned
@@ -130,14 +121,14 @@ Under the **Experiments** view of the admin console, this will create a
 convenient button that you can click to watch ongoing or completed
 experiments (worlds) in real time.
 
-![data button](img/experiments4.png)
+![data button](../_static/experiments4.png)
 
-# Examples
+## Examples
 
 Although the code for a one-way mirror is minimal, it may help to look at the
  following implementations for inspiration.
  
-## Crisis Mapping
+### Crisis Mapping
 
 [![CrowdMapper Replay](http://share.gifyoutube.com/mLnMWR.gif)][cm-paper]
 
@@ -152,9 +143,9 @@ observation over a number of different collections, producing the
 [cm-client]: https://github.com/TurkServer/CrowdMapper/blob/master/client/admin.coffee
 [cm-server]: https://github.com/TurkServer/CrowdMapper/blob/master/server/server.coffee#L38
 
-## Prisoner's Dilemma
+### Prisoner's Dilemma
 
-![PD Mirror](img/design/pd-mirror.png)
+![PD Mirror](../_static/design/pd-mirror.png)
 
 This one-way mirror uses much simpler data, but also uses [D3][d3] to build 
 a real-time visualization showing the experimenter much more than 

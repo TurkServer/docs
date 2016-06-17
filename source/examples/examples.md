@@ -1,23 +1,13 @@
----
-layout: default
-author: 
-title: Examples
-slug: examples
-permalink: examples
-published: true
-icon: fa fa-flask
-category: navigation
-order: 2
----
+# Examples
 
-# Basic Examples
+## Basic Examples
 
 The basic [tutorial](tutorial) describes how to build a simple, but full 
 fledged example app ([see source code](https://github.com/TurkServer/tutorial).)
 Take a look at this app as a working starting point for something you can 
 deploy online.
 
-# Research Projects
+## Research Projects
 
 Although studies of individual behavior are desirable and easy to build, 
 TurkServer really shines for studying groups, especially for complex

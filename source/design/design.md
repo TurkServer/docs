@@ -1,16 +1,6 @@
----
-layout: default
-author:
-title: Design Guide
-slug: design
-permalink: design
-published: true
-icon: fa fa-lightbulb-o
-category: navigation
-order: 4
----
+# Design Overview
 
-# Typical Workflow using TurkServer
+## Typical Workflow using TurkServer
 
 [cm]: https://github.com/TurkServer/CrowdMapper 
 [pd]: https://github.com/TurkServer/long-run-cooperation
@@ -45,7 +35,7 @@ better to do this in testing than to shoot from the hip.
 5. Share the source code of your app so others can look at your experiment 
 protocol, and replicate or build on it.
 
-# Designing Good Experiments
+## Designing Good Experiments
 
 While TurkServer provides much of the software components necessary
 for deploying web-based experiments, many elements of your 
@@ -58,7 +48,7 @@ that affect how well you can collect data when your app is live. Consider the
 following "state diagram" (credit: Eshin Jolly) that illustrates possible 
 conditions a user passes through as they participate in a group task:   
 
-![example flow](img/design/experiment-flow.png)
+![example flow](../_static/design/experiment-flow.png)
    
 Among other things, the diagram illustrates:
    

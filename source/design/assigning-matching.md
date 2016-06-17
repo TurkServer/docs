@@ -1,13 +1,4 @@
----
-layout: default
-title: Assignment and Matching
-slug: assignment-matching
-permalink: assignment-matching
-published: true
-icon: fa fa-random
-category: design
-order: 2
----
+# Assignment and Matching
 
 ### Matching Issues:
 

@@ -1,14 +1,4 @@
----
-layout: default
-title: Working with Workers
-slug: forums-reputation
-permalink: forums-reputation
-published: true
-icon:
-category: launching
-order: 1
----
-
+# Working with Workers
 
 Best crowdsourcing practices: 
 http://wiki.wearedynamo.org/index.php/Guidelines_for_Academic_Requesters

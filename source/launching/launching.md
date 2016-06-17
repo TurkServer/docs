@@ -1,16 +1,4 @@
----
-layout: default
-author: kgao
-title: Launching Experiments
-slug: launching
-permalink: launching
-published: true
-icon: fa fa-users
-category: navigation
-order: 5
----
-
-# Management Info here
+# Launching Experiments
 
 - When you finally launch your meteor experiment rejoice for you have earned a long-rest and a vacation on the beach
 - Actually don't because things aren't as "automatic" as they may seem

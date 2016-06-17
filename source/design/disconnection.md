@@ -1,13 +1,4 @@
----
-layout: default
-title: Disconnection and Dropout
-slug: disconnection
-permalink: disconnection
-published: true
-icon: fa fa-plug
-category: design
-order: 4
----
+# Disconnection and Dropout
 
 Users may disconnect and reconnect to your experiment, or leave without 
 coming back. A good experiment design accounts for this and minimizes the 

@@ -1,13 +1,4 @@
----
-layout: default
-title: Frequently Asked Questions
-slug: faq
-permalink: faq
-published: true
-icon: fa fa-question-circle
-category: design
-order: 20
----
+# Frequently Asked Questions
 
 > I don't want to or can't write code. Can I hire a developer to build my web
  application (experiment) for me? 
