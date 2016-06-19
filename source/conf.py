@@ -22,6 +22,8 @@
 
 import sphinx_rtd_theme
 from recommonmark.parser import CommonMarkParser
+import recommonmark
+from recommonmark.transform import AutoStructify
 
 source_parsers = {
     '.md': CommonMarkParser,
@@ -123,6 +125,15 @@ pygments_style = 'sphinx'
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
 
+# AutoStructify - see http://recommonmark.readthedocs.io/en/latest/
+
+github_doc_root = 'https://github.com/TurkServer/docs/tree/master/source/'
+def setup(app):
+    app.add_config_value('recommonmark_config', {
+            'url_resolver': lambda url: github_doc_root + url,
+            'auto_toc_tree_section': 'Contents',
+            }, True)
+    app.add_transform(AutoStructify)
 
 # -- Options for HTML output ----------------------------------------------
 

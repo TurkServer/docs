@@ -13,10 +13,10 @@ application platform, and providing a common system on which to build
 software-based behavioral experiments, TurkServer allows for:
 
 - **Easier real-time programming** using the [Meteor][2] web app framework
-- Building synchronous experiments and studying [**group interaction**](assigning-matching)
-- A live web-based [**experimenter console**](admin-console) showing all 
+- Building synchronous experiments and studying [group interaction](design/assigning.md)
+- A live web-based [experimenter console](arch/admin-console.md) showing all 
 connected participants
-- The ability to create [**one-way mirrors**](mirror) to view behavior
+- The ability to create [one-way mirrors](design/mirror.md) to view behavior
  in real time     
                 
 [2]: https://www.meteor.com/           
@@ -50,6 +50,6 @@ implement it from scratch: just grab their code and use it!
 
 ## Next Steps
 
-Ready to jump in? Check out the [quick start](quickstart.html), a basic 
-(but fully functional) [tutorial app](tutorial.html), or read up on how to 
-think about [designing software-based online experiments](designConsiderations.html).
+Ready to jump in? Check out the [quick start](quick-start.md), a basic 
+(but fully functional) [tutorial app](examples/tutorial.md), or read up on how to 
+think about [designing experiments with TurkServer](design/design.md).

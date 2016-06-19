@@ -1,13 +1,13 @@
 Welcome to Turkserver's documentation!
-====================================
+======================================
 
 The main documentation for the site is organized into a couple sections:
 
 * :ref:`intro-docs`
 * :ref:`example-docs`
-* :ref:`architecture`
-* :ref:`design`
-* :ref:`launching` 
+* :ref:`arch-docs`
+* :ref:`design-docs`
+* :ref:`launching-docs`
 
 .. _intro-docs:
 
@@ -16,7 +16,7 @@ The main documentation for the site is organized into a couple sections:
    :caption: Getting Started
 
    intro
-   quickStart
+   quick-start
    
 .. _example-docs:
 
@@ -28,7 +28,7 @@ The main documentation for the site is organized into a couple sections:
    examples/tutorial
    examples/research
 
-.. _architecture:
+.. _arch-docs:
 
 .. toctree::
    :maxdepth: 2
@@ -42,23 +42,23 @@ The main documentation for the site is organized into a couple sections:
    arch/research-methods
    arch/alternatives
    
-.. _design:
+.. _design-docs:
 
 .. toctree::
    :maxdepth: 2
    :caption: Designing Experiments
    
    design/design
-   design/assigning-matching
+   design/assigning
    design/good-instructions
    design/disconnection
-   design/one-way-mirror
+   design/mirror
    design/debugging
-   design/minimizing-attrition
+   design/attrition
    design/software
    design/faq
    
-.. _launching:
+.. _launching-docs:
 
 .. toctree::
    :maxdepth: 2
