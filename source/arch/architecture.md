@@ -6,11 +6,11 @@ This means you do all your programming in Javascript, on both the client-side
 
 [meteor]: https://www.meteor.com/
 
-<img src="/_static/arch/stack.png" width="60%">
+![stack](/img/arch/stack.png)
 
 Why is TurkServer designed this way, and what are the core concepts?
 
-- Read [why we chose Meteor](why-meteor) and Javascript as the 
+- Read [why we chose Meteor](why-meteor.md) and Javascript as the 
 underlying framework, and why this facilitates social experiments research.
 - Understand the [multiple worlds abstraction](worlds-assignment), its relation 
 to Meteor's real-time data framework, and how this makes it easier to design 

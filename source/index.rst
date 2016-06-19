@@ -34,13 +34,13 @@ The main documentation for the site is organized into a couple sections:
    :maxdepth: 2
    :caption: System Architecture
 
-   architecture/architecture
-   architecture/why-meteor
-   architecture/world-assignment
-   architecture/admin-console
-   architecture/treatments
-   architecture/research-methods
-   architecture/alternatives
+   arch/architecture
+   arch/why-meteor
+   arch/world-assignment
+   arch/admin-console
+   arch/treatments
+   arch/research-methods
+   arch/alternatives
    
 .. _design:
 
@@ -69,7 +69,7 @@ The main documentation for the site is organized into a couple sections:
    launching/pilot
    launching/coordinating-groups
    launching/checklist
-   launching/experimentManagement
+   launching/live-management
    launching/post-experiment
 
 Indices and tables

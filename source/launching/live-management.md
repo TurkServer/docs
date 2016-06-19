@@ -1,4 +1,4 @@
-# Managing an Active Experiments
+# Managing an Active Experiment
 
 ### While you're live:
 
