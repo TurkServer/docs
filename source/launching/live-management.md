@@ -74,7 +74,7 @@
     - Under Manage HITs individually you should see the "Remaining Assignments" value along with other info about your HIT
     - This is the "gold standard" regardless of what Turkserver says because it's what Turkers will be able to see as well 
 
-### Troubleshooting
+# Troubleshooting
 
 - If something is going wrong you should immediately freak out! (ask Eshin he know's all about this)
 - Actually don't that. Just figure out what's up by checking the following:

@@ -20,6 +20,9 @@ A brief overview of the different sections:
 - **Experiments**: shows experiment instances, their participants, and timing information.
 - **Manage**: controls batch and treatment data which are used to configure experiments.
 
+We aim to provide more information about the interface as its design is
+finalized. For now, the admin interface is mostly self-explanatory.
+
 <!--
 Batches and treatments can be viewed and edited from the
 administration interface.

@@ -2,7 +2,7 @@
 
 - When you finally launch your meteor experiment rejoice for you have earned a long-rest and a vacation on the beach
 - Actually don't because things aren't as "automatic" as they may seem
-- You still need to [manage your active experiment](active-management) to 
+- You still need to [manage your active experiment](live-management.md) to 
 deal with 
 users in real time
 - As of this writing (9/24/15) it seems far more advantageous to launch many "small" HITs instead of several large ones

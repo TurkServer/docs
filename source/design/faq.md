@@ -31,7 +31,7 @@ interaction with the participants. There is much less variation than in
 traditional brick-and-mortar experiments, as much of this is encapsulated in the
 software. However, there are still exceptions, a notable one being the
 importance of [engaging with workers and maintaining your
-reputation](forums-reputation). As a result, it's very difficult to run a
+reputation](../launching/forums-reputation.md). As a result, it's very difficult to run a
 software-based experiment without understanding how the user interface and the
 rest of the app was built. Either you'll need to be familiar with it anyway, or
 your developer will also need to be a "lab manager" and run the experiment.

@@ -26,14 +26,13 @@ synchronizing data across multiple clients, making social, collaborative apps
 public is often a lot of work for those unfamiliar with devops, and ease of 
 deployment means you can get on with your research. 
    
-[deploy]: http://guide.meteor.com/deployment.html#galaxy   
-
 - **Active and growing community of developers**. Meteor is one of the top 10
  frameworks on GitHub, and is built on the widely popular NodeJS. Building an
   app with TurkServer leverages these communities as much as possible. 
   Thus, you can find answers to many common issues on sites like 
   [StackOverflow][so] and [Meteor's forums][forums].
-     
+
+[deploy]: http://guide.meteor.com/deployment.html#galaxy   
 [so]: http://stackoverflow.com/
 [forums]: https://forums.meteor.com/ 
 

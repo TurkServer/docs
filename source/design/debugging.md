@@ -7,9 +7,9 @@ reconnections, and so on.
 Use the MTurk Sandbox for end-to-end testing.
 
 Think everything's ready? The ultimate test of your app is to conduct a 
-[pilot](pilot). 
+[pilot](../launching/pilot.md). 
 
-# Notes and Troubleshooting
+## Code Troubleshooting
 
 Because TurkServer runs alongside your app on both the server and client,
 strange behavior can occur when writing code without thoughtfulness. While we've

@@ -7,8 +7,8 @@ please post an [issue][is]. This will help us improve documentation and general
 information for prospective future experimenters. Better yet, suggest edits 
 and send a [pull request][pr] (see below).
 
-[is]: https://github.com/TurkServer/turkserver.github.io/issues
-[pr]: https://github.com/TurkServer/turkserver.github.io/pulls 
+[is]: https://github.com/TurkServer/docs/issues
+[pr]: https://github.com/TurkServer/docs/pulls 
 
 # Getting Started
 

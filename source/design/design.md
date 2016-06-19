@@ -19,18 +19,18 @@ investigate whether your experiment makes sense. Here are some examples:
      hundred people, one unit was two players in a repeated game.            
 
 2. If the design is promising, add TurkServer to your app, and integrate with
-its [assignment mechanism](worlds-assignment), which will allow you to make
+its [assignment mechanism](../arch/world-assignment.md), which will allow you to make
 different instances of your prototype world and control how participants 
 enter and leave them.
 
 3. Test, debug, and pilot your experiment extensively, making sure that your 
-[code works as intended](debugging) and your [instructions are easy to 
-understand](good-instructions). Start with your research team, then others in
+[code works as intended](debugging.md) and your [instructions are easy to 
+understand](good-instructions.md). Start with your research team, then others in
 your lab/department, and finally run a pilot with real crowdsourcing workers.
 Experiments inevitably involve many redesigns and modifications, and it's 
 better to do this in testing than to shoot from the hip.
 
-4. [Run your experiment](launching)!
+4. [Run your experiment](../launching/launching.md)!
 
 5. Share the source code of your app so others can look at your experiment 
 protocol, and replicate or build on it.
@@ -52,23 +52,23 @@ conditions a user passes through as they participate in a group task:
    
 Among other things, the diagram illustrates:
    
-- A [matching mechanism](assignment-matching) to group people together as 
+- A [matching mechanism](assigning.md) to group people together as 
 they are waiting in the lobby.
-- Providing [good instructions](good-instructions) and using a comprehension 
+- Providing [good instructions](good-instructions.md) and using a comprehension 
 task to check that they are understood.
-- Accounting for the possibility of [disconnection and dropout](disconnection)
+- Accounting for the possibility of [disconnection and dropout](disconnection.md)
 in your design, both to minimize the amount of data that might be discarded 
 and ensure a good experience for all remaining participants.
 
 See also the following topics:
  
-- Constructing a [one-way mirror](mirror) to qualitatively observe activity 
+- Constructing a [one-way mirror](mirror.md) to qualitatively observe activity 
 and diagnose potential issues.
-- How to [debug and test your app](debugging) before running it live. 
-- How to [minimize attrition](attrition) in experiments that run over a long 
+- How to [debug and test your app](debugging.md) before running it live. 
+- How to [minimize attrition](attrition.md) in experiments that run over a long 
 period of time or over multiple days.
-- Helpful [packages and software](software) that you may want to use in 
+- Helpful [packages and software](software.md) that you may want to use in 
 your app.
-- Other [frequently asked questions](faq) about building experiments. 
+- Other [frequently asked questions](faq.md) about building experiments. 
         
 

@@ -380,8 +380,3 @@ Now you can modify the demo, turn off sandbox in settings and launch your own ex
 
 Enjoy your new research experience using TurkServer!
 
-## ***Reference***
-
-Turkserver v0.5.0 API Reference:  See [here](https://turkserver.meteorapp.com/)
-
-If you have any question: please contact the developer [here](https://kgao.github.io/#contact)

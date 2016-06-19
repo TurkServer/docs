@@ -6,8 +6,8 @@ experiments. Here are a list of the ones we know that are currently active.
 The main differentiation of TurkServer is relative to the platforms and
 frameworks below is its focus on facilitating and instrumenting real-time and
 synchronous interaction. But we've kept the software simple, and you'll find 
-features such as the [live experimenter console](admin-console) and [one-way 
-mirror](mirror) useful even for single-user experiments.
+features such as the [live experimenter console](admin-console.md) and [one-way 
+mirror](mirror.md) useful even for single-user experiments.
 
 - [Breadboard][breadboard] focuses on network and cooperation experiments.
 - [CogniLab][cognilab] is a paid service for launching online experiments, no
@@ -42,10 +42,3 @@ that may supplement or replace Mechanical Turk in the future.
 [prolific]: https://prolific.ac/
 [crowdsourcing]: https://www.quora.com/Are-there-any-similar-services-to-Amazon-Mechanical-Turk 
 
-<!--
-Other references, stuff that is not well supported
-[SoPHIE][sophie]
-[sophie]: http://www.sophie.uni-osnabrueck.de/
-
-http://cogsci.stackexchange.com/questions/109
--->

@@ -28,7 +28,7 @@ experiment, conducted daily over a *month*, collecting an order of magnitude
 
 ## Your paper here!
 
-Want more citations and your work on this page? Add your project here and send us
+Show your work on this page. Add your project here and send us
 a [pull request][pr]!
 
-[pr]: https://github.com/TurkServer/turkserver.github.io/pulls
+[pr]: https://github.com/TurkServer/docs/pulls

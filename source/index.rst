@@ -17,6 +17,7 @@ The main documentation for the site is organized into a couple sections:
 
    intro
    quick-start
+   api
    
 .. _example-docs:
 

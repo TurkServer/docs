@@ -3,8 +3,7 @@
 This tutorial walks you through building a simple, but fully functional app 
 that you can deploy and that demonstrates many of the features of TurkServer.
  If you'd prefer to start hacking from a working example, you can start 
- poking around [the code][1] directly and follow the [deployment 
- instructions](quickstart) to get it online.   
+ poking around [the code][1] directly and follow the [deployment instructions](../quick-start.md) to get it online.   
   
 [1]: https://github.com/TurkServer/tutorial    
 
@@ -14,7 +13,7 @@ that you can deploy and that demonstrates many of the features of TurkServer.
 
 For the purposes of this tutorial, we will use the default Meteor "counter" app that comes bundled with every installation. To generate the necessary files, simply type `meteor create app`. To run the app, `cd app` and `meteor`. Then open a browser and navigate to `http://localhost:3000/` to verify that all is working properly. You should see the following:
 
-![screenshot]/img/clickMe.png)
+![screenshot](/img/clickMe.png)
 
 Before moving on, don't forget to `meteor remove insecure` and `meteor remove autopublish`.
 
@@ -511,9 +510,9 @@ So we've set the bonus value, but we haven't yet approved the worker's assignmen
 
 ## Deployment
 
-To continue with the tutorial, follow the [deployment instructions]
-(quickstart) so that you can use the actual MTurk API and get the app running
- in the MTurk sandbox.
+To continue with the tutorial, follow the [deployment instructions](../quick-start.md)
+so that you can use the actual MTurk API and get the app running in the MTurk
+sandbox.
 
 ## HITs and HITTypes
 
@@ -557,7 +556,7 @@ At this point we're all set to create our HIT. Click on "HITs" in the navigation
   --> 
 
 The MTurk Sandbox allows you to test and debug your app without spending real
- money. See the [deployment instructions](quickstart) for how to post a HIT 
+ money. See the [deployment instructions](../quick-start.md) for how to post a HIT 
  and pay your workers.    
 
 
