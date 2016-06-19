@@ -14,7 +14,7 @@ that you can deploy and that demonstrates many of the features of TurkServer.
 
 For the purposes of this tutorial, we will use the default Meteor "counter" app that comes bundled with every installation. To generate the necessary files, simply type `meteor create app`. To run the app, `cd app` and `meteor`. Then open a browser and navigate to `http://localhost:3000/` to verify that all is working properly. You should see the following:
 
-![screenshot](../_static/clickMe.png)
+![screenshot]/img/clickMe.png)
 
 Before moving on, don't forget to `meteor remove insecure` and `meteor remove autopublish`.
 
@@ -95,11 +95,11 @@ For now, fill in "adminPassword", "accessKeyId", and "secretAccessKey". We'll co
 
 Finally, run your app with `meteor --settings settings.json`. When you navigate to `http://localhost:3000/` (the default route `'/'`), you should see your "home" template (which prompts you to accept the HIT), and now you should also see a popup that prompts you to select a "batch:"
 
-![screenshot](../_static/popup.png)
+![screenshot](/img/popup.png)
 
 Don't worry about this for now. Navigate instead to `http://localhost:3000/turkserver` and login with the password you put in your settings file. You should see the following admin interface:
 
-![screenshot](../_static/turkserver.png)
+![screenshot](/img/turkserver.png)
 
 Feel free to explore a bit, but most of what you see won't make sense just yet.
 
@@ -245,7 +245,7 @@ We've talked a lot about the SimpleAssigner, but we haven't actually yet told ou
 
 We can create a batch via the admin interface. Go back to `http://localhost:3000/turkserver`. Click on "Manage" at the bottom of the left sidebar. Under the "Manage Batches" header, type the name "main" into the textbox, and then hit the blue "+" button. You should see a row appear above that says "main." Click on it. In the box that shows up on the right, click the green "Make Active" button.
 
-![screenshot](../_static/batch.png)
+![screenshot](/img/batch.png)
 
 To add the SimpleAssigner to your new "main" batch, add the following code within the `Meteor.startup` block of the `Meteor.isServer` block at the bottom of demo.js:
 
@@ -291,7 +291,7 @@ Now let's use the admin console to dig a bit deeper into what just happened. Go 
 
 Now click on "Assignments - Completed" in the left navigation pane. You should see something like the below:
 
-![screenshot](../_static/completedAsst.png)
+![screenshot](/img/completedAsst.png)
 
 This shows the results of the HIT you just completed as a fake user. More precisely, it shows the details of your **assignment**. Recall the following facts about users, assignments, and experiments:
 
@@ -305,20 +305,20 @@ Take a look at some of the data recorded for this assignment:
 - You can also see the times you accepted and submitted the HIT. 
 - The **Instances** field shows one square blue icon, which corresponds to the one experiment you did in this assignment. If you click on that icon, you will see a popup with the id of that experiment, as well as a list of the users who participated:
 
-![screenshot](../_static/instance-popup.png)
+![screenshot](/img/instance-popup.png)
 
 - There is also a **Bonus** field, which reads as "not set." In addition to paying a user the promised base rate for a HIT, you may want to bonus the user according to the work he did. TurkServer makes it very easy to increment a user's bonus while he completes the experiment, and then pay him later. We'll come back to this shortly.
 - The answers you submitted during the exit survey are recorded in the right column.
 
 Now click on "Experiments" in the left navigation pane. You should see something like the below:
 
-![screenshot](../_static/experiments.png)
+![screenshot](/img/experiments.png)
 
 This is a visualization of completed and ongoing experiments. There will be bar per experiment. Since we have only done one experiment, we just see one fat bar. The x-axis is the time spent in this experiment. Click on the bar, and you will see the same pop-up that you saw when you clicked on the little blue square on the previous page.
 
 Scroll down a bit, and you'll see something like:
 
-![screenshot](../_static/experiments2.png)
+![screenshot](/img/experiments2.png)
 
 There are no ongoing experiments, but there is one completed experiment. Here we see the start time, duration, and size and user identities. Don't worry about the "treatment" field or the "watch" or "logs" buttons for now.
 
@@ -326,21 +326,21 @@ Now we're going to do another experiment (as another fake user) and this time we
 
 Go back to the admin console and click on the Experiments tab. You should now see two bars in the visualization, and the second one should be "growing" with time, because this second experiment is still going on:
 
-![screenshot](../_static/experiments3.png)
+![screenshot](/img/experiments3.png)
 
 Scroll down, and you'll see that there is one ongoing experiment. The worker ID is highlighted in green, which means that he is currently online. (A grey background means he is disconnected.)
 
-![screenshot](../_static/experiments4.png)
+![screenshot](/img/experiments4.png)
 
 Now click on "Assignments - Active" in the left navigation pane. You should see something like the below:
 
-![screenshot](../_static/activeAsst.png)
+![screenshot](/img/activeAsst.png)
 
 Pretty self-explanatory. Note that assignments are typically in one of two states: "assigned" or "completed". When a user submits a HIT, the assignment becomes completed and moves from the "Assignments - Active" to the "Assignments - Completed" page in the admin console.
 
 Next click on "Connections" in the left navigation pane. You should see something like:
 
-![screenshot](../_static/connection.png)
+![screenshot](/img/connection.png)
 
 Here is where you can keep tabs on all currently connected users. A user's state will either be lobby, experiment, or exit survey.
 
@@ -505,7 +505,7 @@ You should start seeing a pattern emerging with these TurkServer API calls. Firs
 
 To see if this worked properly, go through the HIT yet again. Be sure to click the button a few times. Then go to the admin console and the Assignments - Completed page. On the most recent assignment, you should see a value next to the Bonus field, as well as a red label that says "Unpaid."
 
-![screenshot](../_static/bonus.png)
+![screenshot](/img/bonus.png)
 
 So we've set the bonus value, but we haven't yet approved the worker's assignment or paid the bonus. We can't test out this functionality while running as a fake user, so we'll have to move to Mechanical Turk's sandbox environment.
 
@@ -530,17 +530,17 @@ limbo state.
 
 Choose the "main" batch, and then fill out all other fields. Most are self-explanatory, but complete descriptions can be found in the Mechanical Turk API docs [here](http://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_RegisterHITTypeOperation.html). You can leave the "Assignment Duration in Seconds" and "Auto Approval Delay in Seconds" fields set to their default values, which ensure that we have one day to complete our HIT once we accept it, and that our assignment will be automatically approved in a week.
 
-![screenshot](../_static/createHIT.png)
+![screenshot](/img/createHIT.png)
 
 The only non-trivial part of this process has to do with worker qualifications. TurkServer makes it easy to add a few commonly-used qualifications, such as: "US Worker" or "95% approval rate." Simply select the ones you want in the box by holding down the control key (Windows) or command key (Mac) and clicking the names.
 
 If you want to add your own qualification type, use the form at the bottom of the page. For instance, say we wanted to ensure that only workers with a Masters qualification can accept our HIT. Go to the Mechanical Turk API docs page [here](http://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_QualificationRequirementDataStructureArticle.html#ApiReference_QualificationType-IDs) to look up the corresponding qualification type ID. Note that the docs say to "set the comparator parameter to 'exists' to require that workers have this qualification." Thus, fill out the form as follows:
 
-![screenshot](../_static/addQual.png)
+![screenshot](/img/addQual.png)
 
 and then hit the blue "+" button. You now should see your new qualification in the dropdown menu in the form above:
 
-![screenshot](../_static/mastersQual.png)
+![screenshot](/img/mastersQual.png)
 
 Don't select any qualifications right now, because we're just testing on the sandbox (plus, most qualifications have different ids on sandbox than production, so it wouldn't work properly anyway.)
 
@@ -548,7 +548,7 @@ When you're ready, click "Create". On the following screen, you should see a but
 
 At this point we're all set to create our HIT. Click on "HITs" in the navigation pane. In the "Create New HIT" form, select the HIT type we just created from the dropdown menu. Leave "Max Assignments" and "Lifetime in Seconds" at their default values, which ensure that only one worker can accept this HIT, and that the HIT will be available for one day until it expires. When you're done, click "Create." You should see the HIT pop up in the table to the left:
 
-![screenshot](../_static/new_hit.png)
+![screenshot](/img/new_hit.png)
 
 ## Using the Mechanical Turk Sandbox
 

@@ -121,7 +121,7 @@ Under the **Experiments** view of the admin console, this will create a
 convenient button that you can click to watch ongoing or completed
 experiments (worlds) in real time.
 
-![data button](../_static/experiments4.png)
+![data button](/img/experiments4.png)
 
 ## Examples
 
@@ -145,7 +145,7 @@ observation over a number of different collections, producing the
 
 ### Prisoner's Dilemma
 
-![PD Mirror](../_static/design/pd-mirror.png)
+![PD Mirror](/img/design/pd-mirror.png)
 
 This one-way mirror uses much simpler data, but also uses [D3][d3] to build 
 a real-time visualization showing the experimenter much more than 

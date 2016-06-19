@@ -48,7 +48,7 @@ that affect how well you can collect data when your app is live. Consider the
 following "state diagram" (credit: Eshin Jolly) that illustrates possible 
 conditions a user passes through as they participate in a group task:   
 
-![example flow](../_static/design/experiment-flow.png)
+![example flow](/img/design/experiment-flow.png)
    
 Among other things, the diagram illustrates:
    

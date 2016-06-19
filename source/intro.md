@@ -13,8 +13,7 @@ application platform, and providing a common system on which to build
 software-based behavioral experiments, TurkServer allows for:
 
 - **Easier real-time programming** using the [Meteor][2] web app framework
-- Building synchronous experiments and studying [**group interaction**]
-(assigning-matching)
+- Building synchronous experiments and studying [**group interaction**](assigning-matching)
 - A live web-based [**experimenter console**](admin-console) showing all 
 connected participants
 - The ability to create [**one-way mirrors**](mirror) to view behavior

@@ -5,7 +5,7 @@ people in "behavioral labs" at universities. These labs typically involve
 cramming a group of people into a room for an hour or so and asking them to 
 do something:    
     
-![old labs](img/intro/old-lab.png)
+![old labs](/img/intro/old-lab.png)
 
 The lab is quite a useful tool in that it offers a great degree of control in
 doing experiments, and hence the ability to draw correct, causal conclusions.
@@ -31,7 +31,7 @@ Internet participants to overcome many of the limitations of brick-and-mortar
  This allows us to design behavioral experiments that would have been very 
  hard to do in the past. 
 
-![virtual lab design space](img/intro/virtual-lab-design.png)    
+![virtual lab design space](/img/intro/virtual-lab-design.png)    
 
 ## Public goods with communication
 

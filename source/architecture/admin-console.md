@@ -5,7 +5,7 @@ real-time view of everything that is happening with your users and in your
 experiments. You can use this to manage batches, manage treatments, view the
 progress of experiments, and post HITs to recruit subjects.
 
-![admin console](../_static/turkserver.png)
+![admin console](/img/turkserver.png)
 
 A brief overview of the different sections:
 

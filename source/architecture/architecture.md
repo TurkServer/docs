@@ -6,7 +6,7 @@ This means you do all your programming in Javascript, on both the client-side
 
 [meteor]: https://www.meteor.com/
 
-<img src="../_static/arch/stack.png" width="60%">
+<img src="/_static/arch/stack.png" width="60%">
 
 Why is TurkServer designed this way, and what are the core concepts?
 
