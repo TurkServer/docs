@@ -1,10 +1,15 @@
 # Debugging and Testing
 
-Debug your app thoroughly in local mode before launching on MTurk.
-Grab some friends or use multiple browsers. Test things like dropouts, 
-reconnections, and so on.
+Debug and test your app thoroughly before launching with real participants. We
+recommend going through the following steps:
 
-Use the MTurk Sandbox for end-to-end testing.
+1. Grab some friends and have them play with your app. Are the instructions
+clear? Is it obvious what a participant should do?
+2. Test your app using multiple browsers in a local machine. Try dropping out of
+your experiment and seeing how your code handles it. Reconnect to your
+experiment (within a short amount of time) and ensure that data isn't lost.
+3. Use the MTurk Sandbox for end-to-end testing, and make sure that the HIT can
+be submitted correctly and is collecting all the data that you need.
 
 Think everything's ready? The ultimate test of your app is to conduct a 
 [pilot](../launching/pilot.md). 

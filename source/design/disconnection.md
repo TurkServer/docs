@@ -2,9 +2,11 @@
 
 Users may disconnect and reconnect to your experiment, or leave without 
 coming back. A good experiment design accounts for this and minimizes the 
-disruption to other users and the quality of the data.
+disruption to other users and preserves the quality of the data.
 
-### Connection Issues:
+## Examples
+
+### Handling disconnections
 
 - Your project code should keep tabs on the connection state of each user and should have some kind of connection timer that prevents one user from getting "stuck" if their partner(s) disconnect
 - Likewise if rematching users is important, make sure to build that into your project code and critically set it up in a way that your Assigner knows what to do, for example:
@@ -14,7 +16,7 @@ disruption to other users and the quality of the data.
     - If it doesn't see that flag it assumes they have completed their experiment instance and pushes them to the TS Exit survey 
     - If it doesn't see any experiment instances it assumes this is their first time in the lobby and leaves them there to get matched 
 
-### Idling Issues:
+### Handling idle users
 
 - Your project should probably deal with users that take exceedingly long to respond
 - One solution is to setup the Assignment duration so that that a user must complete it within a certain time otherwise risk being unable to submit

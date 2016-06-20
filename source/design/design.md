@@ -64,9 +64,7 @@ See also the following topics:
  
 - Constructing a [one-way mirror](mirror.md) to qualitatively observe activity 
 and diagnose potential issues.
-- How to [debug and test your app](debugging.md) before running it live. 
-- How to [minimize attrition](attrition.md) in experiments that run over a long 
-period of time or over multiple days.
+- How to [debug and test your app](debugging.md) before running it live.
 - Helpful [packages and software](software.md) that you may want to use in 
 your app.
 - Other [frequently asked questions](faq.md) about building experiments. 

@@ -1,7 +1,11 @@
 Welcome to Turkserver's documentation!
 ======================================
 
-The main documentation for the site is organized into a couple sections:
+This documentation is being updated continually and is subject to change. If you
+see anything missing, use the **Edit on GitHub** button at the top right of
+every page to suggest improvements.
+
+This site is organized into a few sections:
 
 * :ref:`intro-docs`
 * :ref:`example-docs`
@@ -47,7 +51,7 @@ The main documentation for the site is organized into a couple sections:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Designing Experiments
+   :caption: Building Experiments
    
    design/design
    design/assigning
@@ -55,7 +59,6 @@ The main documentation for the site is organized into a couple sections:
    design/disconnection
    design/mirror
    design/debugging
-   design/attrition
    design/software
    design/faq
    

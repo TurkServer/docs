@@ -1,5 +1,7 @@
 # Launching Experiments
 
+This section of the guide is rough, and we could use your help to clean it up.
+
 - When you finally launch your meteor experiment rejoice for you have earned a long-rest and a vacation on the beach
 - Actually don't because things aren't as "automatic" as they may seem
 - You still need to [manage your active experiment](live-management.md) to 
