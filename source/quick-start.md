@@ -148,7 +148,7 @@ So let's start the journey now! (Click the "Next" button on the right)
         "adminPassword": <String>, // Password you choose for the TurkServer admin deshboard
         "experiment": {
           "limit": {
-            "batch": <Number> // Number of batches in experiment
+            "batch": <Number> // Max number of times a user can accept HITs in one batch
           }
         },
         "mturk": {
