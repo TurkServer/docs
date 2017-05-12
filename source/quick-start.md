@@ -121,18 +121,10 @@ So let's start the journey now! (Click the "Next" button on the right)
     
     > `git clone https://github.com/TurkServer/tutorial.git`
 
-2.  **Add TurkServer package**
-    
-    Under the root of your project, add the turkserver meteor package:
-    
-    > `cd tutorial`
-    
-    > `git clone https://github.com/HarvardEconCS/turkserver-meteor.git packages/turkserver` (Please note: Using GitHub has the install source is temporary until it's published as a Meteor package)
-    
-    > `meteor add mizzao:turkserver` (Please note: If you are using Windows Command Prompt, you might not get notified in real time, you can simply press any key during this step or use Windows Powershell instead.)
-
 3.  **Create settings file**
-    
+
+    > `cd tutorial`
+
     Under the root of your project, create a `settings.json` file, follow `settings-template.json`.
     
     Fill in "adminPassword", "accessKeyId", and "secretAccessKey".

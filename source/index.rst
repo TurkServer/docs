@@ -1,5 +1,8 @@
-Welcome to Turkserver's documentation!
+Guide to using Turkserver
 ======================================
+
+For a 2-minute introduction on the purpose of this project, see the
+:doc:`intro`.
 
 This documentation is being updated continually and is subject to change. If you
 see anything missing, use the **Edit on GitHub** button at the top right of
