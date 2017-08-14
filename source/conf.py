@@ -61,7 +61,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'TurkServer'
-copyright = u'2016 Microsoft and individual contributors'
+copyright = u'2017 Microsoft and individual contributors'
 author = u'Microsoft and individual contributors'
 
 # The version info for the project you're documenting, acts as replacement for
