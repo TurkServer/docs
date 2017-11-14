@@ -239,12 +239,11 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
     > 5. `$ npm install`  (Please note: Use npm > 3 if you are getting any  long path issues.. Use [nvm](https://github.com/coreybutler/nvm-windows) to easily change node/npm version in local environment.)
     > 6. `$ MONGO_URL=mongodb://localhost:27017/test PORT=3000 ROOT_URL=http://localhost:3000 npm start`
     > If this is successful, then you can continue the step using `git remote` to push your app to Azure. (If you didn't choose continuous deployment using Git when you build your Azure App Service, you can manually set it up [here](https://azure.microsoft.com/en-us/documentation/articles/web-sites-publish-source-control/)).
-
     > Don't forget to add below app setting to your web app inside Azure portal App Settings
     > Key: ROOT_URL
     > Value: web app url(ex: http://{appname}.azurewebsites.net/)
     > Then, create a web.config file under .demeteorized/bundle/ and insert this [link](https://raw.githubusercontent.com/christopheranderson/azure-demeteorizer/master/resources/web.config) content.
-    > Now you can navigate to .demeteorized/bundle/ folder and Commit your changes to WEB_APP_GIT_URL(i.e. https://username@{sitename}.scm.azurewebsites.net:443/{appname}.git)
+    > Now you can navigate to .demeteorized/bundle/ folder and Commit your changes:
     > 7. `$ git init`
     > 8. `$ git remote add azure  https://username@{sitename}.scm.azurewebsites.net:443/{appname}.git`
     > 9. `$ git add .`
