@@ -213,12 +213,12 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
     
     In this way, you can take advantage of the native support with features like `high availability with auto-patching`, `built-in autoscale` and `load balancing`.   
      
-    For **Windows** users, you can use [Azure-demeteorizer](https://github.com/christopheranderson/azure-demeteorizer).
+    For **Windows** users, we recommend to use [Azure-demeteorizer](https://github.com/christopheranderson/azure-demeteorizer).
     Make sure you install and meet all the [prerequisites](https://github.com/christopheranderson/azure-demeteorizer#prerequisites) first, (Note: Visual Studio 2013 would be the most comaptible choice for most users.)
     then Azure-demeteorizer can do all the magic for you:
     
     > 1. `npm install -g christopheranderson/azure-demeteorizer` to install azure-demeteorizer globally via npm:
-    > 2. `cd tutorial`
+    > 2. `cd tutorial
     > 3. `azure-demeteorizer build`
     > 4. `azure-demeteorizer install`
     > 5. `azure-demeteorizer zip`
@@ -229,16 +229,21 @@ Here we are going to use [Microsoft Azure](https://azure.microsoft.com/) as exam
     
     >  (Note: For a full respect of your changes in **Continuous Deployment**, you need stop server during step 6.)
      
-    For **Linux/Mac OSX** users, you can use [Demeteorizer](https://github.com/OnModulus/demeteorizer), however,
-    you have to demeteorize first, and do a continuous deployment with Git, TFS, GitHub, or Visual Studio Team Services (Here use Git as example):
+    For all **Linux/Mac OSX/Windows** users, you can use [Demeteorizer](https://github.com/OnModulus/demeteorizer), however,
+    you have to demeteorize first, and meet the meteor install requirements (Use Below command to install meteor on local environment: "curl https://install.meteor.com/ | sh" Then, Check for your meteor version. we highly recommend using > 1.4), then you can do a continuous deployment with Git, TFS, GitHub, or Visual Studio Team Services (Here use Git as example):
     
     > 1. `$ npm install -g demeteorizer` to install Demeteorizer globally via npm
     > 2. `$ cd tutorial`
     > 3. `$ demeteorizer`
     > 4. `$ cd .demeteorized/bundle/programs/server`
-    > 5. `$ npm install`
+    > 5. `$ npm install`  (Please note: Use npm > 3 if you are getting any  long path issues.. Use [nvm](https://github.com/coreybutler/nvm-windows) to easily change node/npm version in local environment.)
     > 6. `$ MONGO_URL=mongodb://localhost:27017/test PORT=3000 ROOT_URL=http://localhost:3000 npm start`
-    > If this is successful, then you can continue using `git remote` to push your app to Azure. (If you didn't choose continuous deployment using Git when you build your Azure App Service, you can manually set it up [here](https://azure.microsoft.com/en-us/documentation/articles/web-sites-publish-source-control/)).
+    > If this is successful, then you can continue the step using `git remote` to push your app to Azure. (If you didn't choose continuous deployment using Git when you build your Azure App Service, you can manually set it up [here](https://azure.microsoft.com/en-us/documentation/articles/web-sites-publish-source-control/)).
+    > Don't forget to add below app setting to your web app inside Azure portal App Settings
+    > Key: ROOT_URL
+    > Value: web app url(ex: http://{appname}.azurewebsites.net/)
+    > Then, create a web.config file under .demeteorized/bundle/ and insert this [link](https://raw.githubusercontent.com/christopheranderson/azure-demeteorizer/master/resources/web.config) content.
+    > Now you can navigate to .demeteorized/bundle/ folder and Commit your changes:
     > 7. `$ git init`
     > 8. `$ git remote add azure  https://username@{sitename}.scm.azurewebsites.net:443/{appname}.git`
     > 9. `$ git add .`
